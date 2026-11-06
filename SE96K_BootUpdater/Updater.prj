@@ -1,0 +1,36 @@
+[Project]
+Project=ZCW-ICE
+[File Count]
+Count=5
+[Filter Index]
+Index=2
+[Project Files]
+File0=boot_image.c
+File1=defines.h
+File2=flash.c
+File3=m9f951.h
+File4=MAIN.C
+[Settings]
+Device=M9F951
+ConfigBitValue0=192
+ConfigBitValue1=4
+ConfigBitValue2=0
+ConfigBitValue3=11
+ConfigBitValue4=1
+ConfigBitValue5=148
+ConfigBitValue6=254
+ConfigBitValue7=255
+ConfigBitValue8=66
+Output=.
+PostBuild=0
+PostBuildCommand=
+ConfigBitValue9=0
+[RomArea]
+Start=1000
+End=7F7F
+CodeOffset=1000
+Operation=2
+WarningLevel=-2
+[ParaSetting]
+ReadOnly=1
+ShowChipName=1
