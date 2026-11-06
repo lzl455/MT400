@@ -1,0 +1,28 @@
+--- a/hal/userdefined_key.c	2026-10-08 21:30:05.266974200 +0800
++++ b/hal/userdefined_key.c	2026-10-08 21:30:05.400533100 +0800
+@@ -159,8 +159,10 @@
+             else
+             {
+                 // LED_SCROLL_PIN = 0;
+-                decode_data_l = flash_key_win_tbl[key_index++];
+-                decode_data_h = flash_key_win_tbl[key_index];
++                // flash 0xF0~0xFF 是校验和区, C20 不能从flash取
++                pRom = (key_index < 0xF0) ? flash_key_win_tbl : matrixkey_win_tbl;
++                decode_data_l = pRom[key_index++];
++                decode_data_h = pRom[key_index];
+             }
+                 
+         // }
+@@ -179,8 +181,10 @@
+     }
+     else if((0==decode_data_l)&&(0==decode_data_h))
+     {
+-        decode_data_l = flash_key_win_tbl[key_index++];
+-        decode_data_h = flash_key_win_tbl[key_index];
++        key_index &= 0xFE;                      // 上面已 key_index++, 回到偶地址
++        pRom = (key_index < 0xF0) ? flash_key_win_tbl : matrixkey_win_tbl;
++        decode_data_l = pRom[key_index++];
++        decode_data_h = pRom[key_index];
+     }
+ 
+     if(iDEF_COM == (decode_data_h&iDEF_COM_MASK))

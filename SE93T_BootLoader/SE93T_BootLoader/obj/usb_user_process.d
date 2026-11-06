@@ -1,0 +1,1 @@
+ obj/usb_user_process.d  obj/usb_user_process.p1:  usb_user_process.c hid_process.h main.h USBD_CORE.H usb_cfg_info.h time.h types.h defines.h

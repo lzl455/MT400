@@ -1,0 +1,1 @@
+ obj/time.d  obj/time.p1:  time.c

@@ -1,0 +1,1 @@
+ obj/usb_descriptor.d  obj/usb_descriptor.p1:  usb_descriptor.c usb_descriptor.h hid_process.h USBD_CORE.H usb_cfg_info.h types.h

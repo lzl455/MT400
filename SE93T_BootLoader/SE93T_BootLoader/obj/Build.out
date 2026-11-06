@@ -1,0 +1,12 @@
+Microchip MPLAB XC8 C Compiler (PRO Mode) V1.41
+Build date: Jan 24 2017
+Part Support Version: 1.41
+Copyright (C) 2017 Microchip Technology Inc.
+usb_user_process.c:35: warning: (1262) object "Fake" lies outside available data space
+
+Memory Summary:
+    Program space        used   E9Eh (  3742) of  1000h bytes   ( 91.4%)
+    Data space           used   285h (   645) of   8F7h bytes   ( 28.1%)
+    Configuration bits   used     0h (     0) of     0h word    (  0.0%)
+    Data stack space     used     0h (     0) of   4FCh bytes   (  0.0%)
+

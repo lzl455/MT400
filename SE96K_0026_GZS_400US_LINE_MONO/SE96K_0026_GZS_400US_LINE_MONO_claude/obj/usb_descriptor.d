@@ -1,0 +1,1 @@
+ obj/usb_descriptor.d  obj/usb_descriptor.p1:  usb_descriptor.c ./led/wheel_led.h ./driver/time.h usb_descriptor.h main.h ./hal/hid_process.h USBD_CORE.H ./hal/wheel.h ./led/led_logo.h ./hal/matrix_key.h ./led/led_logo_tbl.h ./hal/flash_process.h ./hal/key_code_define.h usb_cfg_info.h types.h defines.h ./hal/userdefined_key.h system_sleep.h

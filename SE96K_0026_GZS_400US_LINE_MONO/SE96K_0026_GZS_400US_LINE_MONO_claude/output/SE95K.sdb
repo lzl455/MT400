@@ -1,0 +1,2382 @@
+[p LITE_MODE PRO_MODE AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK SPACEOPT EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18M9F951 ]
+[d frameptr 4065 ]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"30 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\flash_process.c
+[e E4809 led_mod `uc
+iMODE_LED_INVALID 0
+iMODE_LED_OFF 1
+iMODE_LED_BREATH 2
+iMODE_LED_XLBH 3
+iMODE_LED_LG_L_R 4
+iMODE_LED_ZXB 5
+iMODE_LED_17 6
+iMODE_LED_CENTRE 7
+iMODE_LED_ON 8
+iMODE_LED_SNAKE 9
+iMODE_LED_SNAKE_1 10
+iMODE_LED_SNAKE_2 11
+iMODE_LED_ROLLING 12
+iMODE_LED_SINGLE 13
+iMODE_LED_LG_U_D 14
+iMODE_LED_STAR 15
+iMODE_LED_YZMB 16
+iMODE_LED_CHLP 17
+iMODE_LED_BHQF 18
+iMODE_LED_ARROW 19
+iMODE_LED_MAX 20
+iMODE_LED_DEF 2
+]
+"31
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"32
+[e E4976 RGB_MODE_Enum `uc
+iMODE_WHEEL_OFF 0
+iMODE_WHEEL_HCLG 1
+iMODE_WHEEL_BREATH 2
+iMODE_WHEEL_ON 3
+iMODE_WHEEL_MAX 3
+iMODE_WHEEL_INVALID 15
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"243 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\hid_process.c
+[e E4809 led_mod `uc
+iMODE_LED_INVALID 0
+iMODE_LED_OFF 1
+iMODE_LED_BREATH 2
+iMODE_LED_XLBH 3
+iMODE_LED_LG_L_R 4
+iMODE_LED_ZXB 5
+iMODE_LED_17 6
+iMODE_LED_CENTRE 7
+iMODE_LED_ON 8
+iMODE_LED_SNAKE 9
+iMODE_LED_SNAKE_1 10
+iMODE_LED_SNAKE_2 11
+iMODE_LED_ROLLING 12
+iMODE_LED_SINGLE 13
+iMODE_LED_LG_U_D 14
+iMODE_LED_STAR 15
+iMODE_LED_YZMB 16
+iMODE_LED_CHLP 17
+iMODE_LED_BHQF 18
+iMODE_LED_ARROW 19
+iMODE_LED_MAX 20
+iMODE_LED_DEF 2
+]
+"249
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"36 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_logo.c
+[e E4809 led_mod `uc
+iMODE_LED_INVALID 0
+iMODE_LED_OFF 1
+iMODE_LED_BREATH 2
+iMODE_LED_XLBH 3
+iMODE_LED_LG_L_R 4
+iMODE_LED_ZXB 5
+iMODE_LED_17 6
+iMODE_LED_CENTRE 7
+iMODE_LED_ON 8
+iMODE_LED_SNAKE 9
+iMODE_LED_SNAKE_1 10
+iMODE_LED_SNAKE_2 11
+iMODE_LED_ROLLING 12
+iMODE_LED_SINGLE 13
+iMODE_LED_LG_U_D 14
+iMODE_LED_STAR 15
+iMODE_LED_YZMB 16
+iMODE_LED_CHLP 17
+iMODE_LED_BHQF 18
+iMODE_LED_ARROW 19
+iMODE_LED_MAX 20
+iMODE_LED_DEF 2
+]
+"38
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"678
+[e E4688 . `uc
+USBE_Default 0
+USBE_Address 1
+USBE_Configured 2
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"47 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode12_zxb.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"46 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode13_yzmb.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"43 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode14_chlp.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"35 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode15_bhqf.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"35 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode16_arrow.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"35 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode17_centre.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"34 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode18_xlbh.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"37 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode1x_wasd.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"79
+[e E4809 led_mod `uc
+iMODE_LED_INVALID 0
+iMODE_LED_OFF 1
+iMODE_LED_BREATH 2
+iMODE_LED_XLBH 3
+iMODE_LED_LG_L_R 4
+iMODE_LED_ZXB 5
+iMODE_LED_17 6
+iMODE_LED_CENTRE 7
+iMODE_LED_ON 8
+iMODE_LED_SNAKE 9
+iMODE_LED_SNAKE_1 10
+iMODE_LED_SNAKE_2 11
+iMODE_LED_ROLLING 12
+iMODE_LED_SINGLE 13
+iMODE_LED_LG_U_D 14
+iMODE_LED_STAR 15
+iMODE_LED_YZMB 16
+iMODE_LED_CHLP 17
+iMODE_LED_BHQF 18
+iMODE_LED_ARROW 19
+iMODE_LED_MAX 20
+iMODE_LED_DEF 2
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"35 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode3_breath.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"37 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode4_snake.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"39 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode5_rolling.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"36 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode6_single.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"51 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode7_liugong.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"48 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode9_star.c
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"247 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\MAIN.C
+[e E4688 . `uc
+USBE_Default 0
+USBE_Address 1
+USBE_Configured 2
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"374 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\matrix_key.c
+[e E4809 led_mod `uc
+iMODE_LED_INVALID 0
+iMODE_LED_OFF 1
+iMODE_LED_BREATH 2
+iMODE_LED_XLBH 3
+iMODE_LED_LG_L_R 4
+iMODE_LED_ZXB 5
+iMODE_LED_17 6
+iMODE_LED_CENTRE 7
+iMODE_LED_ON 8
+iMODE_LED_SNAKE 9
+iMODE_LED_SNAKE_1 10
+iMODE_LED_SNAKE_2 11
+iMODE_LED_ROLLING 12
+iMODE_LED_SINGLE 13
+iMODE_LED_LG_U_D 14
+iMODE_LED_STAR 15
+iMODE_LED_YZMB 16
+iMODE_LED_CHLP 17
+iMODE_LED_BHQF 18
+iMODE_LED_ARROW 19
+iMODE_LED_MAX 20
+iMODE_LED_DEF 2
+]
+"375
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"82 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\system_sleep.c
+[e E4809 led_mod `uc
+iMODE_LED_INVALID 0
+iMODE_LED_OFF 1
+iMODE_LED_BREATH 2
+iMODE_LED_XLBH 3
+iMODE_LED_LG_L_R 4
+iMODE_LED_ZXB 5
+iMODE_LED_17 6
+iMODE_LED_CENTRE 7
+iMODE_LED_ON 8
+iMODE_LED_SNAKE 9
+iMODE_LED_SNAKE_1 10
+iMODE_LED_SNAKE_2 11
+iMODE_LED_ROLLING 12
+iMODE_LED_SINGLE 13
+iMODE_LED_LG_U_D 14
+iMODE_LED_STAR 15
+iMODE_LED_YZMB 16
+iMODE_LED_CHLP 17
+iMODE_LED_BHQF 18
+iMODE_LED_ARROW 19
+iMODE_LED_MAX 20
+iMODE_LED_DEF 2
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4894 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"310 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\usb_descriptor.c
+[e E4733 . `uc
+USBE_Default 0
+USBE_Address 1
+USBE_Configured 2
+]
+"320
+[e E4698 . `uc
+Rec_Device 0
+Rec_Interface 1
+Rec_EndPoint 2
+Rec_Other 3
+]
+"677
+[e E4725 . `uc
+GET_DEV_DES 1
+GET_CONFIG_DES 2
+GET_STR_DES 3
+GET_BOS_DES 15
+GET_CLASS_HID_DES 33
+GET_CLASS_HID_REPORT 34
+]
+"749
+[e E4689 . `uc
+Dir_HostToSlave 0
+Dir_SlaveToHost 128
+]
+"754
+[e E4704 . `uc
+GET_STATUS 0
+CLEAR_FEATURE 1
+SET_FEATURE 3
+SET_ADDRESS 5
+GET_DESCRIPTOR 6
+SET_DESCRIPTOR 7
+GET_CONFIGURATION 8
+SET_CONFIGURATION 9
+GET_INTERFACE 10
+SET_INTERFACE 11
+SYNCH_FRAME 12
+]
+"776
+[e E4717 . `uc
+GET_REPORT 1
+GET_IDLE 2
+GET_PROTOCOL 3
+SET_REPORT 9
+SET_IDLE 10
+SET_PROTOCOL 11
+]
+"751
+[e E4693 . `uc
+ReType_Standard 0
+ReType_Class 32
+ReType_Manufacturer 64
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"536 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\userdefined_key.c
+[e E4809 led_mod `uc
+iMODE_LED_INVALID 0
+iMODE_LED_OFF 1
+iMODE_LED_BREATH 2
+iMODE_LED_XLBH 3
+iMODE_LED_LG_L_R 4
+iMODE_LED_ZXB 5
+iMODE_LED_17 6
+iMODE_LED_CENTRE 7
+iMODE_LED_ON 8
+iMODE_LED_SNAKE 9
+iMODE_LED_SNAKE_1 10
+iMODE_LED_SNAKE_2 11
+iMODE_LED_ROLLING 12
+iMODE_LED_SINGLE 13
+iMODE_LED_LG_U_D 14
+iMODE_LED_STAR 15
+iMODE_LED_YZMB 16
+iMODE_LED_CHLP 17
+iMODE_LED_BHQF 18
+iMODE_LED_ARROW 19
+iMODE_LED_MAX 20
+iMODE_LED_DEF 2
+]
+"557
+[e E4841 speed_level `uc
+iSPEED_LEV_MIN 0
+iSPEED_LEV_1 0
+iSPEED_LEV_2 1
+iSPEED_LEV_3 2
+iSPEED_LEV_4 3
+iSPEED_LEV_5 4
+iSPEED_LEV_MAX 4
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"45 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[e E4832 led_level `uc
+iLED_LEV_MIN 0
+iLED_LEV_0 0
+iLED_LEV_1 1
+iLED_LEV_2 2
+iLED_LEV_3 3
+iLED_LEV_4 4
+iLED_LEV_MAX 4
+iLED_LEV_MAX_LVD 2
+]
+"16 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\wheel_led.c
+[e E4976 RGB_MODE_Enum `uc
+iMODE_WHEEL_OFF 0
+iMODE_WHEEL_HCLG 1
+iMODE_WHEEL_BREATH 2
+iMODE_WHEEL_ON 3
+iMODE_WHEEL_MAX 3
+iMODE_WHEEL_INVALID 15
+]
+"8 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"62 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"20 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"28 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\driver\flash.c
+[v _flash_save_info flash_save_info `(v  1 e 1 0 ]
+"72
+[v _flash_program flash_program `(v  1 e 1 0 ]
+"145
+[v _flash_clear flash_clear `(v  1 e 1 0 ]
+"16 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\driver\TIME.C
+[v _timer0_init timer0_init `(v  1 e 1 0 ]
+"35
+[v _delayms delayms `(v  1 e 1 0 ]
+"27 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\flash_process.c
+[v _led_default_load led_default_load `(v  1 e 1 0 ]
+"42
+[v _checksum_flash checksum_flash `(uc  1 e 1 0 ]
+"55
+[v _memcpy_const memcpy_const `(v  1 e 1 0 ]
+"65
+[v _memcpy memcpy `(v  1 e 1 0 ]
+"75
+[v _memset memset `(v  1 e 1 0 ]
+"91
+[v _cfg_load cfg_load `(v  1 e 1 0 ]
+"195
+[v _load_led_para load_led_para `(v  1 e 1 0 ]
+"247
+[v _e2_config_load e2_config_load `(v  1 e 1 0 ]
+"269
+[v _cfg_mode_save cfg_mode_save `(v  1 e 1 0 ]
+"318
+[v _led_def_save led_def_save `(v  1 e 1 0 ]
+"36 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\hid_process.c
+[v _clear_in_fifo clear_in_fifo `(v  1 e 1 0 ]
+"48
+[v _checksum_check checksum_check `(v  1 e 1 0 ]
+"73
+[v _flash_ctrl flash_ctrl `(v  1 e 1 0 ]
+"237
+[v _hid_get_fw_mode_info hid_get_fw_mode_info `(v  1 e 1 0 ]
+"263
+[v _hid_process hid_process `(v  1 e 1 0 ]
+"63 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\matrix_key.c
+[v _key_process key_process `(v  1 e 1 0 ]
+"144
+[v _matrixkey_value matrixkey_value `(v  1 e 1 0 ]
+"307
+[v _matrixkey_scan matrixkey_scan `(v  1 e 1 0 ]
+"73 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\userdefined_key.c
+[v _key_decode key_decode `(v  1 e 1 0 ]
+"68 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_logo.c
+[v _pwm2_init pwm2_init `(v  1 e 1 0 ]
+"171
+[v _clr_led clr_led `(v  1 e 1 0 ]
+"176
+[v _set_led set_led `(v  1 e 1 0 ]
+"181
+[v _led_hint led_hint `(v  1 e 1 0 ]
+"196
+[v _clr_led_data clr_led_data `(v  1 e 1 0 ]
+"208
+[v _led_process led_process `(v  1 e 1 0 ]
+"496
+[v _timer_int_process timer_int_process `(v  1 e 1 0 ]
+"42 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode12_zxb.c
+[v _led_mode_zxb led_mode_zxb `(v  1 e 1 0 ]
+"41 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode13_yzmb.c
+[v _led_mode_yzmb led_mode_yzmb `(v  1 e 1 0 ]
+"39 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode14_chlp.c
+[v _led_mode_chlp led_mode_chlp `(v  1 e 1 0 ]
+"31 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode15_bhqf.c
+[v _led_mode_bhqf led_mode_bhqf `(v  1 e 1 0 ]
+"31 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode16_arrow.c
+[v _led_mode_arrow led_mode_arrow `(v  1 e 1 0 ]
+"31 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode17_centre.c
+[v _led_mode_centre led_mode_centre `(v  1 e 1 0 ]
+"42 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode18_def.c
+[v _led_mode_def led_mode_def `(v  1 e 1 0 ]
+"30 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode18_xlbh.c
+[v _led_mode_xilabianhuan led_mode_xilabianhuan `(v  1 e 1 0 ]
+"33 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode1x_wasd.c
+[v _led_mode_17 led_mode_17 `(v  1 e 1 0 ]
+"31 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode2_on.c
+[v _led_mode_on led_mode_on `(v  1 e 1 0 ]
+"31 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode3_breath.c
+[v _led_mode_breath led_mode_breath `(v  1 e 1 0 ]
+"34 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode4_snake.c
+[v _led_mode_snake led_mode_snake `(v  1 e 1 0 ]
+"103
+[v _led_mode_snake_1 led_mode_snake_1 `(v  1 e 1 0 ]
+"178
+[v _led_mode_snake_2 led_mode_snake_2 `(v  1 e 1 0 ]
+"35 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode5_rolling.c
+[v _led_mode_roling led_mode_roling `(v  1 e 1 0 ]
+"32 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode6_single.c
+[v _led_mode_single led_mode_single `(v  1 e 1 0 ]
+"31 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode7_liugong.c
+[v _led_mode_liuguang_l_r_w led_mode_liuguang_l_r_w `(v  1 e 1 0 ]
+"46
+[v _led_mode_liuguang_l_r led_mode_liuguang_l_r `(v  1 e 1 0 ]
+"123
+[v _led_mode_liuguang_u_d led_mode_liuguang_u_d `(v  1 e 1 0 ]
+"43 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode9_star.c
+[v _led_mode_star led_mode_star `(v  1 e 1 0 ]
+"37 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\wheel_led.c
+[v _wheel_led_off wheel_led_off `(v  1 e 1 0 ]
+"48 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\MAIN.C
+[v _sys_init sys_init `(v  1 e 1 0 ]
+"148
+[v _power_on_self power_on_self `(v  1 e 1 0 ]
+"171
+[v _main main `(v  1 e 1 0 ]
+"226
+[v _none_int none_int `(v  1 e 1 0 ]
+"235
+[v _HP_Intr HP_Intr `IIH(v  1 e 1 0 ]
+"20 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\system_sleep.c
+[v _off_led off_led `(v  1 e 1 0 ]
+"37
+[v _in_sleep_init in_sleep_init `(v  1 e 1 0 ]
+"74
+[v _out_sleep_init out_sleep_init `(v  1 e 1 0 ]
+"93
+[v _system_sleep system_sleep `(v  1 e 1 0 ]
+"66 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\usb_descriptor.c
+[v _USBD_CalibrationInit USBD_CalibrationInit `(v  1 e 1 0 ]
+"99
+[v _USBD_Calibration USBD_Calibration `(v  1 e 1 0 ]
+"157
+[v ___delayus __delayus `(v  1 e 1 0 ]
+"164
+[v _USBD_Ep0_Stall USBD_Ep0_Stall `(v  1 s 1 USBD_Ep0_Stall ]
+"171
+[v _USBD_Ep0_StatusIn USBD_Ep0_StatusIn `(v  1 s 1 USBD_Ep0_StatusIn ]
+"206
+[v _USBD_Ep0_StatusOut USBD_Ep0_StatusOut `(v  1 s 1 USBD_Ep0_StatusOut ]
+"249
+[v _USBD_Ep0_Write USBD_Ep0_Write `(v  1 s 1 USBD_Ep0_Write ]
+"265
+[v _USBD_Ep0_WriteTable USBD_Ep0_WriteTable `(v  1 s 1 USBD_Ep0_WriteTable ]
+"308
+[v _USBD_GetStatus USBD_GetStatus `(v  1 s 1 USBD_GetStatus ]
+"392
+[v _USBD_ClearFeature USBD_ClearFeature `(v  1 s 1 USBD_ClearFeature ]
+"442
+[v _USBD_SetFeature USBD_SetFeature `(v  1 s 1 USBD_SetFeature ]
+"498
+[v _USBD_SetAddress USBD_SetAddress `(v  1 s 1 USBD_SetAddress ]
+"516
+[v _USBD_GetDevStrDescriptor USBD_GetDevStrDescriptor `(v  1 s 1 USBD_GetDevStrDescriptor ]
+"539
+[v _USBD_ClassGetHidDes USBD_ClassGetHidDes `(v  1 s 1 USBD_ClassGetHidDes ]
+"557
+[v _USBD_ClassGetHidReport USBD_ClassGetHidReport `(v  1 s 1 USBD_ClassGetHidReport ]
+"574
+[v _USBD_GetConfig USBD_GetConfig `(v  1 s 1 USBD_GetConfig ]
+"597
+[v _USBD_SetConfig USBD_SetConfig `(v  1 s 1 USBD_SetConfig ]
+"623
+[v _USBD_GetInterface USBD_GetInterface `(v  1 s 1 USBD_GetInterface ]
+"641
+[v _USBD_SetInterface USBD_SetInterface `(v  1 s 1 USBD_SetInterface ]
+"658
+[v _USBD_ClassGetProtocol USBD_ClassGetProtocol `(v  1 s 1 USBD_ClassGetProtocol ]
+"675
+[v _USBD_GetDescriptor USBD_GetDescriptor `(v  1 s 1 USBD_GetDescriptor ]
+"710
+[v _USBD_EP0_Handler USBD_EP0_Handler `(v  1 e 1 0 ]
+"897
+[v _USBD_Init USBD_Init `(v  1 e 1 0 ]
+"915
+[v _USBD_SwBusInit USBD_SwBusInit `(v  1 e 1 0 ]
+"929
+[v _USBD_disable USBD_disable `(v  1 e 1 0 ]
+"29 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\usb_user_process.c
+[v _usb_data_process usb_data_process `(v  1 e 1 0 ]
+"15 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\include\m9f951.h
+[v _FLASHLOCK FLASHLOCK `VEuc  1 e 1 @0 ]
+"18
+[v _PWM120DL PWM120DL `VEuc  1 e 1 @3712 ]
+"19
+[v _PWM120DH PWM120DH `VEuc  1 e 1 @3713 ]
+"20
+[v _PWM119DL PWM119DL `VEuc  1 e 1 @3714 ]
+"21
+[v _PWM119DH PWM119DH `VEuc  1 e 1 @3715 ]
+"22
+[v _PWM118DL PWM118DL `VEuc  1 e 1 @3716 ]
+"23
+[v _PWM118DH PWM118DH `VEuc  1 e 1 @3717 ]
+"24
+[v _PWM117DL PWM117DL `VEuc  1 e 1 @3718 ]
+"25
+[v _PWM117DH PWM117DH `VEuc  1 e 1 @3719 ]
+"26
+[v _PWM116DL PWM116DL `VEuc  1 e 1 @3720 ]
+"27
+[v _PWM116DH PWM116DH `VEuc  1 e 1 @3721 ]
+"28
+[v _PWM115DL PWM115DL `VEuc  1 e 1 @3722 ]
+"29
+[v _PWM115DH PWM115DH `VEuc  1 e 1 @3723 ]
+"30
+[v _PWM114DL PWM114DL `VEuc  1 e 1 @3724 ]
+"31
+[v _PWM114DH PWM114DH `VEuc  1 e 1 @3725 ]
+"32
+[v _PWM113DL PWM113DL `VEuc  1 e 1 @3726 ]
+"33
+[v _PWM113DH PWM113DH `VEuc  1 e 1 @3727 ]
+"34
+[v _PWM112DL PWM112DL `VEuc  1 e 1 @3728 ]
+"35
+[v _PWM112DH PWM112DH `VEuc  1 e 1 @3729 ]
+"36
+[v _PWM111DL PWM111DL `VEuc  1 e 1 @3730 ]
+"37
+[v _PWM111DH PWM111DH `VEuc  1 e 1 @3731 ]
+"38
+[v _PWM110DL PWM110DL `VEuc  1 e 1 @3732 ]
+"39
+[v _PWM110DH PWM110DH `VEuc  1 e 1 @3733 ]
+"40
+[v _PWM109DL PWM109DL `VEuc  1 e 1 @3734 ]
+"41
+[v _PWM109DH PWM109DH `VEuc  1 e 1 @3735 ]
+"42
+[v _PWM108DL PWM108DL `VEuc  1 e 1 @3736 ]
+"43
+[v _PWM108DH PWM108DH `VEuc  1 e 1 @3737 ]
+"44
+[v _PWM107DL PWM107DL `VEuc  1 e 1 @3738 ]
+"45
+[v _PWM107DH PWM107DH `VEuc  1 e 1 @3739 ]
+"46
+[v _PWM106DL PWM106DL `VEuc  1 e 1 @3740 ]
+"47
+[v _PWM106DH PWM106DH `VEuc  1 e 1 @3741 ]
+"48
+[v _PWM105DL PWM105DL `VEuc  1 e 1 @3742 ]
+"49
+[v _PWM105DH PWM105DH `VEuc  1 e 1 @3743 ]
+"50
+[v _PWM104DL PWM104DL `VEuc  1 e 1 @3744 ]
+"51
+[v _PWM104DH PWM104DH `VEuc  1 e 1 @3745 ]
+"52
+[v _PWM103DL PWM103DL `VEuc  1 e 1 @3746 ]
+"53
+[v _PWM103DH PWM103DH `VEuc  1 e 1 @3747 ]
+"54
+[v _PWM102DL PWM102DL `VEuc  1 e 1 @3748 ]
+"55
+[v _PWM102DH PWM102DH `VEuc  1 e 1 @3749 ]
+"56
+[v _PWM101DL PWM101DL `VEuc  1 e 1 @3750 ]
+"57
+[v _PWM101DH PWM101DH `VEuc  1 e 1 @3751 ]
+"58
+[v _PWM100DL PWM100DL `VEuc  1 e 1 @3752 ]
+"59
+[v _PWM100DH PWM100DH `VEuc  1 e 1 @3753 ]
+"61
+[v _PWM120CR PWM120CR `VEuc  1 e 1 @3755 ]
+"62
+[v _PWM119CR PWM119CR `VEuc  1 e 1 @3756 ]
+"63
+[v _PWM118CR PWM118CR `VEuc  1 e 1 @3757 ]
+"64
+[v _PWM117CR PWM117CR `VEuc  1 e 1 @3758 ]
+"65
+[v _PWM116CR PWM116CR `VEuc  1 e 1 @3759 ]
+"66
+[v _PWM115CR PWM115CR `VEuc  1 e 1 @3760 ]
+"67
+[v _PWM114CR PWM114CR `VEuc  1 e 1 @3761 ]
+"68
+[v _PWM113CR PWM113CR `VEuc  1 e 1 @3762 ]
+"69
+[v _PWM112CR PWM112CR `VEuc  1 e 1 @3763 ]
+"70
+[v _PWM111CR PWM111CR `VEuc  1 e 1 @3764 ]
+"71
+[v _PWM110CR PWM110CR `VEuc  1 e 1 @3765 ]
+"72
+[v _PWM109CR PWM109CR `VEuc  1 e 1 @3766 ]
+"73
+[v _PWM108CR PWM108CR `VEuc  1 e 1 @3767 ]
+"74
+[v _PWM107CR PWM107CR `VEuc  1 e 1 @3768 ]
+"75
+[v _PWM106CR PWM106CR `VEuc  1 e 1 @3769 ]
+"76
+[v _PWM105CR PWM105CR `VEuc  1 e 1 @3770 ]
+"77
+[v _PWM104CR PWM104CR `VEuc  1 e 1 @3771 ]
+"78
+[v _PWM103CR PWM103CR `VEuc  1 e 1 @3772 ]
+"79
+[v _PWM102CR PWM102CR `VEuc  1 e 1 @3773 ]
+"80
+[v _PWM101CR PWM101CR `VEuc  1 e 1 @3774 ]
+"81
+[v _PWM100CR PWM100CR `VEuc  1 e 1 @3775 ]
+"115
+[v _CALLOCK CALLOCK `VEuc  1 e 1 @3849 ]
+"117
+[v _IRCCAL IRCCAL `VEuc  1 e 1 @3855 ]
+"136
+[v _IOFODS1 IOFODS1 `VEuc  1 e 1 @3889 ]
+"137
+[v _IOEODS1 IOEODS1 `VEuc  1 e 1 @3890 ]
+"138
+[v _IODODS1 IODODS1 `VEuc  1 e 1 @3891 ]
+"139
+[v _IOCODS1 IOCODS1 `VEuc  1 e 1 @3892 ]
+"140
+[v _IOBODS1 IOBODS1 `VEuc  1 e 1 @3893 ]
+"141
+[v _IOAODS1 IOAODS1 `VEuc  1 e 1 @3894 ]
+"142
+[v _IOFODS0 IOFODS0 `VEuc  1 e 1 @3898 ]
+"143
+[v _IOEODS0 IOEODS0 `VEuc  1 e 1 @3899 ]
+"144
+[v _IODODS0 IODODS0 `VEuc  1 e 1 @3900 ]
+"145
+[v _IOCODS0 IOCODS0 `VEuc  1 e 1 @3901 ]
+"146
+[v _IOBODS0 IOBODS0 `VEuc  1 e 1 @3902 ]
+"147
+[v _IOAODS0 IOAODS0 `VEuc  1 e 1 @3903 ]
+"148
+[v _IOFICR IOFICR `VEuc  1 e 1 @3912 ]
+"149
+[v _IOEICR IOEICR `VEuc  1 e 1 @3913 ]
+"153
+[v _IOAICR IOAICR `VEuc  1 e 1 @3917 ]
+"154
+[v _PDF PDF `VEuc  1 e 1 @3921 ]
+"155
+[v _PDE PDE `VEuc  1 e 1 @3922 ]
+"156
+[v _PDD PDD `VEuc  1 e 1 @3923 ]
+"157
+[v _PDC PDC `VEuc  1 e 1 @3924 ]
+"158
+[v _PDB PDB `VEuc  1 e 1 @3925 ]
+"159
+[v _PDA PDA `VEuc  1 e 1 @3926 ]
+"160
+[v _PUF PUF `VEuc  1 e 1 @3930 ]
+"161
+[v _PUE PUE `VEuc  1 e 1 @3931 ]
+"162
+[v _PUD PUD `VEuc  1 e 1 @3932 ]
+"163
+[v _PUC PUC `VEuc  1 e 1 @3933 ]
+"164
+[v _PUB PUB `VEuc  1 e 1 @3934 ]
+"165
+[v _PUA PUA `VEuc  1 e 1 @3935 ]
+"166
+[v _UCLKCON UCLKCON `VEuc  1 e 1 @3947 ]
+"171
+[v _UE3IOPS UE3IOPS `VEuc  1 e 1 @3952 ]
+"172
+[v _UE3CON UE3CON `VEuc  1 e 1 @3953 ]
+"173
+[v _UE2IOPS UE2IOPS `VEuc  1 e 1 @3954 ]
+"174
+[v _UE2CON UE2CON `VEuc  1 e 1 @3955 ]
+"175
+[v _UE1IOPS UE1IOPS `VEuc  1 e 1 @3956 ]
+"176
+[v _UE1CON UE1CON `VEuc  1 e 1 @3957 ]
+"177
+[v _UE0IOPS UE0IOPS `VEuc  1 e 1 @3958 ]
+"178
+[v _UE0CON UE0CON `VEuc  1 e 1 @3959 ]
+"179
+[v _UDADR UDADR `VEuc  1 e 1 @3960 ]
+"180
+[v _USBCON USBCON `VEuc  1 e 1 @3961 ]
+"201
+[v _TC1CL TC1CL `VEuc  1 e 1 @3990 ]
+"202
+[v _TC1CH TC1CH `VEuc  1 e 1 @3991 ]
+"203
+[v _TC1PRL TC1PRL `VEuc  1 e 1 @3992 ]
+"204
+[v _TC1PRH TC1PRH `VEuc  1 e 1 @3993 ]
+"205
+[v _T1CR T1CR `VEuc  1 e 1 @3994 ]
+"208
+[v _TC0CL TC0CL `VEuc  1 e 1 @3997 ]
+"209
+[v _TC0CH TC0CH `VEuc  1 e 1 @3998 ]
+"210
+[v _T0CR T0CR `VEuc  1 e 1 @3999 ]
+"218
+[v _ANSF ANSF `VEuc  1 e 1 @4011 ]
+"219
+[v _ANSE ANSE `VEuc  1 e 1 @4012 ]
+"220
+[v _ANSD ANSD `VEuc  1 e 1 @4013 ]
+"221
+[v _ANSC ANSC `VEuc  1 e 1 @4014 ]
+"222
+[v _ANSB ANSB `VEuc  1 e 1 @4015 ]
+"223
+[v _ANSA ANSA `VEuc  1 e 1 @4016 ]
+"230
+[v _OEF OEF `VEuc  1 e 1 @4029 ]
+"231
+[v _OEE OEE `VEuc  1 e 1 @4030 ]
+"232
+[v _OED OED `VEuc  1 e 1 @4031 ]
+"233
+[v _OEC OEC `VEuc  1 e 1 @4032 ]
+"234
+[v _OEB OEB `VEuc  1 e 1 @4033 ]
+"235
+[v _OEA OEA `VEuc  1 e 1 @4034 ]
+"236
+[v _IOF IOF `VEuc  1 e 1 @4038 ]
+"237
+[v _IOE IOE `VEuc  1 e 1 @4039 ]
+"238
+[v _IOD IOD `VEuc  1 e 1 @4040 ]
+"239
+[v _IOC IOC `VEuc  1 e 1 @4041 ]
+"240
+[v _IOB IOB `VEuc  1 e 1 @4042 ]
+"241
+[v _IOA IOA `VEuc  1 e 1 @4043 ]
+"246
+[v _INTF2 INTF2 `VEuc  1 e 1 @4049 ]
+"247
+[v _INTF1 INTF1 `VEuc  1 e 1 @4050 ]
+"248
+[v _INTF0 INTF0 `VEuc  1 e 1 @4051 ]
+"249
+[v _UINTCR0 UINTCR0 `VEuc  1 e 1 @4052 ]
+"250
+[v _INTCR2 INTCR2 `VEuc  1 e 1 @4053 ]
+"251
+[v _INTCR1 INTCR1 `VEuc  1 e 1 @4054 ]
+"252
+[v _INTCR0 INTCR0 `VEuc  1 e 1 @4055 ]
+"279
+[v _OPTION OPTION `VEuc  1 e 1 @4082 ]
+"283
+[v _TBLPTRL TBLPTRL `VEuc  1 e 1 @4086 ]
+"284
+[v _TBLPTRH TBLPTRH `VEuc  1 e 1 @4087 ]
+"1695
+[v _UE5OUTS UE5OUTS `VEb  1 e 0 @31593 ]
+"1734
+[v _UE3INSTL UE3INSTL `VEb  1 e 0 @31628 ]
+"1748
+[v _UE2INS UE2INS `VEb  1 e 0 @31640 ]
+"1752
+[v _UE2INSTL UE2INSTL `VEb  1 e 0 @31644 ]
+"1754
+[v _UE2INF UE2INF `VEb  1 e 0 @31646 ]
+"1766
+[v _UE1INS UE1INS `VEb  1 e 0 @31656 ]
+"1770
+[v _UE1INSTL UE1INSTL `VEb  1 e 0 @31660 ]
+"1772
+[v _UE1INF UE1INF `VEb  1 e 0 @31662 ]
+"1786
+[v _UE0SINS UE0SINS `VEb  1 e 0 @31674 ]
+"1787
+[v _UE0SOUTS UE0SOUTS `VEb  1 e 0 @31675 ]
+"1788
+[v _UE0STL UE0STL `VEb  1 e 0 @31676 ]
+"1791
+[v _UE0SDF UE0SDF `VEb  1 e 0 @31679 ]
+"1803
+[v _USRSM USRSM `VEb  1 e 0 @31689 ]
+"1805
+[v _USHC USHC `VEb  1 e 0 @31691 ]
+"1807
+[v _UBRSM UBRSM `VEb  1 e 0 @31693 ]
+"1808
+[v _UBSPD UBSPD `VEb  1 e 0 @31694 ]
+"1809
+[v _UBRST UBRST `VEb  1 e 0 @31695 ]
+"2074
+[v _TC0EN TC0EN `VEb  1 e 0 @31999 ]
+"2076
+[v _STPL STPL `VEb  1 e 0 @32000 ]
+"2078
+[v _STPH STPH `VEb  1 e 0 @32002 ]
+"2080
+[v _STOP STOP `VEb  1 e 0 @32004 ]
+"2301
+[v _IOF0 IOF0 `VEb  1 e 0 @32304 ]
+"2302
+[v _IOF1 IOF1 `VEb  1 e 0 @32305 ]
+"2303
+[v _IOF2 IOF2 `VEb  1 e 0 @32306 ]
+"2304
+[v _IOF3 IOF3 `VEb  1 e 0 @32307 ]
+"2305
+[v _IOF4 IOF4 `VEb  1 e 0 @32308 ]
+"2306
+[v _IOF5 IOF5 `VEb  1 e 0 @32309 ]
+"2307
+[v _IOF6 IOF6 `VEb  1 e 0 @32310 ]
+"2308
+[v _IOF7 IOF7 `VEb  1 e 0 @32311 ]
+"2310
+[v _IOE0 IOE0 `VEb  1 e 0 @32312 ]
+"2313
+[v _IOE3 IOE3 `VEb  1 e 0 @32315 ]
+"2314
+[v _IOE4 IOE4 `VEb  1 e 0 @32316 ]
+"2315
+[v _IOE5 IOE5 `VEb  1 e 0 @32317 ]
+"2346
+[v _IOA0 IOA0 `VEb  1 e 0 @32344 ]
+"2347
+[v _IOA1 IOA1 `VEb  1 e 0 @32345 ]
+"2401
+[v _IOACHIF IOACHIF `VEb  1 e 0 @32400 ]
+"2405
+[v _IOECHIF IOECHIF `VEb  1 e 0 @32404 ]
+"2406
+[v _IOFCHIF IOFCHIF `VEb  1 e 0 @32405 ]
+"2410
+[v _TC0IF TC0IF `VEb  1 e 0 @32408 ]
+"2438
+[v _IOACHIE IOACHIE `VEb  1 e 0 @32432 ]
+"2442
+[v _IOECHIE IOECHIE `VEb  1 e 0 @32436 ]
+"2443
+[v _IOFCHIE IOFCHIE `VEb  1 e 0 @32437 ]
+"2447
+[v _TC0IE TC0IE `VEb  1 e 0 @32440 ]
+"2674
+[v _EELOCK1 EELOCK1 `VEb  1 e 0 @32641 ]
+"2675
+[v _EELOCK2 EELOCK2 `VEb  1 e 0 @32642 ]
+"2676
+[v _EELOCK3 EELOCK3 `VEb  1 e 0 @32643 ]
+"2682
+[v _WRITE WRITE `VEb  1 e 0 @32648 ]
+"2683
+[v _ERASE ERASE `VEb  1 e 0 @32649 ]
+"2684
+[v _CLRPL CLRPL `VEb  1 e 0 @32650 ]
+"2703
+[v _GIEH GIEH `VEb  1 e 0 @32663 ]
+"15 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\driver\flash.c
+[v _FlashBuff FlashBuff `[128]uc  1 s 128 FlashBuff ]
+"19 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\driver\flash_default.c
+[v _fw_info fw_info `C[16]uc  1 e 16 @28656 ]
+"39
+[v _flash_key_win_tbl flash_key_win_tbl `C[2048]uc  1 e 2048 @28672 ]
+"179
+[v _flash_bank_8 flash_bank_8 `C[256]uc  1 e 256 @30720 ]
+"198
+[v _flash_bank_9 flash_bank_9 `C[256]uc  1 e 256 @30976 ]
+"217
+[v _flash_bank_10 flash_bank_10 `C[256]uc  1 e 256 @31232 ]
+"236
+[v _flash_bank_11 flash_bank_11 `C[256]uc  1 e 256 @31488 ]
+"256
+[v _flash_bank_12 flash_bank_12 `C[256]uc  1 e 256 @31744 ]
+"276
+[v _flash_bank_13 flash_bank_13 `C[256]uc  1 e 256 @32000 ]
+"295
+[v _flash_bank_15 flash_bank_15 `C[128]uc  1 e 128 @32512 ]
+"27 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\driver\led_default_tbl.c
+[v _led_def_tbl led_def_tbl `C[256]uc  1 e 256 @32256 ]
+"17 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\flash_process.c
+[v _device_para_tbl device_para_tbl `[4]uc  1 e 4 0 ]
+"21
+[v _cfg_base cfg_base `uc  1 e 1 0 ]
+[s S21 . 1 `uc 1 b0 1 0 :1:0 
+`uc 1 b1 1 0 :1:1 
+`uc 1 b2 1 0 :1:2 
+`uc 1 b3 1 0 :1:3 
+`uc 1 b4 1 0 :1:4 
+`uc 1 b5 1 0 :1:5 
+`uc 1 b6 1 0 :1:6 
+`uc 1 b7 1 0 :1:7 
+]
+"19 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\hid_process.c
+[u S30 . 1 `S21 1 BIT 1 0 `uc 1 u8 1 0 ]
+[v _uhid_ctrl_reg uhid_ctrl_reg `S30  1 e 1 0 ]
+"21
+[v _in_report_data in_report_data `[32]uc  1 e 32 0 ]
+"22
+[v _out_report_data out_report_data `[32]uc  1 e 32 0 ]
+"23
+[v _flash_fifo flash_fifo `[128]uc  1 e 128 0 ]
+"25
+[v _check_sum check_sum `ui  1 e 2 0 ]
+[s S33 . 2 `uc 1 b0 1 0 :1:0 
+`uc 1 b1 1 0 :1:1 
+`uc 1 b2 1 0 :1:2 
+`uc 1 b3 1 0 :1:3 
+`uc 1 b4 1 0 :1:4 
+`uc 1 b5 1 0 :1:5 
+`uc 1 b6 1 0 :1:6 
+`uc 1 b7 1 0 :1:7 
+`uc 1 b8 1 1 :1:0 
+`uc 1 b9 1 1 :1:1 
+`uc 1 b10 1 1 :1:2 
+`uc 1 b11 1 1 :1:3 
+`uc 1 b12 1 1 :1:4 
+`uc 1 b13 1 1 :1:5 
+`uc 1 b14 1 1 :1:6 
+`uc 1 b15 1 1 :1:7 
+]
+"19 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\matrix_key.c
+[u S50 . 2 `S33 1 BIT 2 0 `ui 1 u16 2 0 ]
+[v _ukey_ctrl ukey_ctrl `S50  1 e 2 0 ]
+"20
+[v _ukey_ctrl_ex ukey_ctrl_ex `S50  1 e 2 0 ]
+"22
+[v _ukey_temp_flag ukey_temp_flag `S30  1 e 1 0 ]
+"23
+[v _ukey_temp_flag_1 ukey_temp_flag_1 `S30  1 e 1 0 ]
+"34
+[v _ukey_temp_delay ukey_temp_delay `S30  1 e 1 0 ]
+"37
+[v _matrix_status matrix_status `[23]uc  1 e 23 0 ]
+"38
+[v _key_fn_status key_fn_status `[126]uc  1 e 126 0 ]
+"40
+[v _mouse_data_key mouse_data_key `uc  1 e 1 0 ]
+"41
+[v _mouse_data_x mouse_data_x `ui  1 e 2 0 ]
+"42
+[v _mouse_data_y mouse_data_y `ui  1 e 2 0 ]
+"43
+[v _mouse_data_z mouse_data_z `uc  1 e 1 0 ]
+"45
+[v _std_key std_key `[22]uc  1 e 22 0 ]
+"46
+[v _multi_key multi_key `[2]uc  1 e 2 0 ]
+"48
+[v _gKeyScan_bak gKeyScan_bak `[23]uc  1 e 23 0 ]
+"49
+[v _gKey_delay gKey_delay `[21]uc  1 e 21 0 ]
+"51
+[v _press_default_led_time_count press_default_led_time_count `ui  1 e 2 0 ]
+"129
+[v _matrix_index_tbl matrix_index_tbl `C[24]uc  1 e 24 0 ]
+"26 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\matrix_key_tbl_win.h
+[v _matrixkey_win_tbl matrixkey_win_tbl `C[252]uc  1 e 252 0 ]
+"26 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\matrix_key_tbl_win_fn.h
+[v _matrixkey_win_fn_tbl matrixkey_win_fn_tbl `C[252]uc  1 e 252 0 ]
+"26 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\matrix_key_tbl_win_fn_lock.h
+[v _matrixkey_win_fn_lock_tbl matrixkey_win_fn_lock_tbl `C[252]uc  1 e 252 0 ]
+"26 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\matrix_key_tbl_win_lock.h
+[v _matrix_key_tbl_win_lock matrix_key_tbl_win_lock `C[252]uc  1 e 252 0 ]
+"25 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\userdefined_key.c
+[v _uspecial_key uspecial_key `S50  1 e 2 0 ]
+"30
+[v _udecode_data_l udecode_data_l `S30  1 e 1 0 ]
+"31
+[v _udecode_data_h udecode_data_h `S30  1 e 1 0 ]
+"33
+[v _define_key_ctrl define_key_ctrl `uc  1 e 1 0 ]
+"35
+[v _define_key_fifo define_key_fifo `[120]uc  1 e 120 0 ]
+"36
+[v _define_key_flag define_key_flag `uc  1 e 1 0 ]
+"38
+[v _decode_data_l_n decode_data_l_n `uc  1 e 1 0 ]
+"39
+[v _decode_data_h_n decode_data_h_n `uc  1 e 1 0 ]
+"41
+[v _com_key_length com_key_length `ui  1 e 2 0 ]
+"42
+[v _com_key_addr_back com_key_addr_back `ui  1 e 2 0 ]
+"43
+[v _com_key_addr com_key_addr `ui  1 e 2 0 ]
+"44
+[v _cmd_hong_count cmd_hong_count `uc  1 e 1 0 ]
+"45
+[v _com_key_index com_key_index `uc  1 e 1 0 ]
+"47
+[v _key_delay_count_l key_delay_count_l `uc  1 e 1 0 ]
+"48
+[v _key_delay_count_h key_delay_count_h `uc  1 e 1 0 ]
+"50
+[v _multi_data_tmp_l multi_data_tmp_l `uc  1 e 1 0 ]
+"51
+[v _multi_data_tmp_h multi_data_tmp_h `uc  1 e 1 0 ]
+"52
+[v _tmp_std_key tmp_std_key `[22]uc  1 e 22 0 ]
+"54
+[v _MY_SIRI_TIME MY_SIRI_TIME `uc  1 e 1 0 ]
+"55
+[v _MY_FN_WIN_LOCK_flag MY_FN_WIN_LOCK_flag `uc  1 e 1 0 ]
+"148 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\matrix_key.h
+[v _uspecial_key_bak uspecial_key_bak `S50  1 e 2 0 ]
+"203
+[v _led_index led_index `uc  1 e 1 0 ]
+"204
+[v _col_index col_index `uc  1 e 1 0 ]
+"32 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\userdefined_key.h
+[v _udefine_key_status udefine_key_status `S30  1 e 1 0 ]
+"29 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_logo_tbl.h
+[v _led_snake_table led_snake_table `C[126]uc  1 e 126 0 ]
+"40
+[v _led_to_matrix_tab_3 led_to_matrix_tab_3 `C[126]uc  1 e 126 0 ]
+"50
+[v _led_to_matrix_tab_4 led_to_matrix_tab_4 `C[126]uc  1 e 126 0 ]
+"62
+[v _led_to_matrix_tab_1 led_to_matrix_tab_1 `C[126]uc  1 e 126 0 ]
+"86
+[v _led_to_matrix_tab_down_up led_to_matrix_tab_down_up `C[126]uc  1 e 126 0 ]
+"110
+[v _led_to_matrix_tab_2 led_to_matrix_tab_2 `C[21][6]uc  1 e 126 0 ]
+"134
+[v _matrix_to_led_tab matrix_to_led_tab `C[126]uc  1 e 126 0 ]
+"158
+[v _matrix_single_tab matrix_single_tab `C[126]uc  1 e 126 0 ]
+"183
+[v _led_to_matrix_tab_14_14 led_to_matrix_tab_14_14 `C[200]uc  1 e 200 0 ]
+"44 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\defines.h
+[v _led_index_value led_index_value `uc  1 e 1 @80 ]
+"45
+[v _led_light_lev led_light_lev `E4832  1 e 1 @81 ]
+"46
+[v _int_temp0 int_temp0 `uc  1 e 1 @82 ]
+"48
+[v _int_ioa_dat int_ioa_dat `uc  1 e 1 @85 ]
+"49
+[v _int_iob_dat int_iob_dat `uc  1 e 1 @86 ]
+"50
+[v _int_ioc_dat int_ioc_dat `uc  1 e 1 @87 ]
+"51
+[v _int_iod_dat int_iod_dat `uc  1 e 1 @88 ]
+"53
+[v _pwm_duty_array pwm_duty_array `[128]uc  1 e 128 @256 ]
+"55
+[v _bootloader_val bootloader_val `[4]uc  1 e 4 @640 ]
+"127 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\USBD_CORE.H
+[v _USBEnumState USBEnumState `uc  1 e 1 0 ]
+"129
+[v _uUSBSwState uUSBSwState `S30  1 e 1 0 ]
+"136
+[v _uusb_ctrl_flag uusb_ctrl_flag `S30  1 e 1 0 ]
+"145
+[v _uusb_status_reg uusb_status_reg `S30  1 e 1 0 ]
+"158
+[v _uEpState uEpState `S30  1 e 1 0 ]
+"170
+[v _IdleRate IdleRate `uc  1 e 1 0 ]
+"171
+[v _usb_report_lenght usb_report_lenght `uc  1 e 1 0 ]
+"173
+[v _uUSBEpBusy uUSBEpBusy `S30  1 e 1 0 ]
+"183
+[v _UsbEp0Buffer UsbEp0Buffer `[34]uc  1 e 34 @2048 ]
+"194
+[v _UsbEp1Buffer UsbEp1Buffer `[34]uc  1 e 34 @2082 ]
+"195
+[v _UsbEp2Buffer UsbEp2Buffer `[34]uc  1 e 34 @2116 ]
+"196
+[v _UsbEp3Buffer UsbEp3Buffer `[18]uc  1 e 18 @2150 ]
+"197
+[v _UsbEp4Buffer UsbEp4Buffer `[66]uc  1 e 66 @2168 ]
+"198
+[v _UsbEp5Buffer UsbEp5Buffer `[66]uc  1 e 66 @2234 ]
+"19 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_logo.c
+[v _uled_ctrl_reg uled_ctrl_reg `S50  1 e 2 0 ]
+"20
+[v _uled_status_reg uled_status_reg `S50  1 e 2 0 ]
+"21
+[v _uled_status_reg_ex uled_status_reg_ex `S30  1 e 1 0 ]
+"22
+[v _uint_temp0 uint_temp0 `S30  1 e 1 0 ]
+"36
+[v _led_cur_mode led_cur_mode `E4809  1 e 1 0 ]
+"37
+[v _led_pre_mode led_pre_mode `E4809  1 e 1 0 ]
+"38
+[v _led_speed_lev led_speed_lev `E4841  1 e 1 0 ]
+"39
+[v _led_scan_count led_scan_count `uc  1 e 1 0 ]
+"41
+[v _pwm_time_count pwm_time_count `uc  1 e 1 0 ]
+"42
+[v _delay_time_count delay_time_count `ui  1 e 2 0 ]
+"45
+[v _scan_index scan_index `uc  1 e 1 0 ]
+"46
+[v _back_led_off_delay back_led_off_delay `uc  1 e 1 0 ]
+"48
+[v _pwm_duty_array_0 pwm_duty_array_0 `[128]uc  1 e 128 0 ]
+"49
+[v _pwm_duty_array_1 pwm_duty_array_1 `[128]uc  1 e 128 0 ]
+"50
+[v _pwm_duty_array_2 pwm_duty_array_2 `[128]uc  1 e 128 0 ]
+"51
+[v _pwm_duty_array_3 pwm_duty_array_3 `[128]uc  1 e 128 0 ]
+"20 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode12_zxb.c
+[v _zxb_time_delay zxb_time_delay `C[8]uc  1 e 8 0 ]
+"19 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode13_yzmb.c
+[v _yzmb_time_delay yzmb_time_delay `C[8]uc  1 e 8 0 ]
+"19 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode14_chlp.c
+[v _chlp_r_tbl chlp_r_tbl `C[42]uc  1 e 42 0 ]
+"21
+[v _chlp_g_tbl chlp_g_tbl `C[42]uc  1 e 42 0 ]
+"23
+[v _chlp_b_tbl chlp_b_tbl `C[42]uc  1 e 42 0 ]
+"25
+[v _chlp_ctrl_tbl chlp_ctrl_tbl `C[42]uc  1 e 42 0 ]
+"15 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode18_def.c
+[v _led_def_index led_def_index `uc  1 e 1 0 ]
+"16
+[v _led_def_dat_tbl led_def_dat_tbl `[128]uc  1 e 128 0 ]
+"21
+[v _led_def_mode_0_4_tbl led_def_mode_0_4_tbl `C[80]uc  1 e 80 0 ]
+"24 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode1x_wasd.c
+[v _snake_led_index0 snake_led_index0 `uc  1 e 1 0 ]
+"16 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode4_snake.c
+[v _snake_led_index snake_led_index `uc  1 e 1 0 ]
+"18 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode5_rolling.c
+[v _rolling_led_index rolling_led_index `uc  1 e 1 0 ]
+"19 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode7_liugong.c
+[v _led_liuguang_l_r_tbl led_liuguang_l_r_tbl `C[20]uc  1 e 20 0 ]
+"23
+[v _led_liuguang_u_d_tbl led_liuguang_u_d_tbl `C[6]uc  1 e 6 0 ]
+"15 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode9_star.c
+[v _lfsr_value lfsr_value `ui  1 e 2 0 ]
+"16
+[v _start_dec_count start_dec_count `uc  1 e 1 0 ]
+"21
+[v _start_dec_delay start_dec_delay `C[8]uc  1 e 8 0 ]
+"16 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\wheel_led.c
+[v _wheel_led_cur_mode wheel_led_cur_mode `E4976  1 e 1 0 ]
+"19 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\MAIN.C
+[v _usys_ctrl_reg usys_ctrl_reg `S30  1 e 1 0 ]
+"20
+[v _utemp_bit utemp_bit `S30  1 e 1 0 ]
+"22
+[v _sof_count sof_count `uc  1 e 1 0 ]
+"23
+[v _SwBusTimer SwBusTimer `uc  1 e 1 0 ]
+"25
+[v _gtemp_i gtemp_i `uc  1 e 1 0 ]
+"26
+[v _gtemp_j gtemp_j `uc  1 e 1 0 ]
+"27
+[v _mac_win_hint_time mac_win_hint_time `uc  1 e 1 0 ]
+"29
+[v _matrix_status_bak matrix_status_bak `[23]uc  1 e 23 0 ]
+"31
+[v _my_led_flag my_led_flag `uc  1 e 1 0 ]
+"52 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\usb_descriptor.c
+[v _usbcalisum usbcalisum `ui  1 e 2 0 ]
+"53
+[v _usbcalimax usbcalimax `uc  1 e 1 0 ]
+[v _usbcalimin usbcalimin `uc  1 e 1 0 ]
+[v _usbcalisimplecnt usbcalisimplecnt `uc  1 e 1 0 ]
+"488 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\usb_descriptor.h
+[v _HID_ReportDescriptor_Define HID_ReportDescriptor_Define `C[155]uc  1 e 155 0 ]
+"573
+[v _HID_ReportDescriptor_Keyboard HID_ReportDescriptor_Keyboard `C[67]uc  1 e 67 0 ]
+"608
+[v _DeviceDesc DeviceDesc `C[18]uc  1 e 18 0 ]
+"626
+[v _ManuStringDesc ManuStringDesc `C[10]uc  1 e 10 0 ]
+"633
+[v _SerialNumberStringDesc SerialNumberStringDesc `C[20]uc  1 e 20 0 ]
+"640
+[v _StringDescSerialNum StringDescSerialNum `C[28]uc  1 e 28 0 ]
+"649
+[v _ConfigurationDesc ConfigurationDesc `C[59]uc  1 e 59 0 ]
+"720
+[v _DeviceHidDescriptor_KB DeviceHidDescriptor_KB `C[9]uc  1 e 9 0 ]
+"730
+[v _DeviceHidDescriptor_DEF DeviceHidDescriptor_DEF `C[9]uc  1 e 9 0 ]
+"741
+[v _LanguageIDDesc LanguageIDDesc `C[4]uc  1 e 4 0 ]
+"750
+[v _DeviceDescSize DeviceDescSize `uc  1 e 1 0 ]
+"751
+[v _LanguageIDDescSize LanguageIDDescSize `uc  1 e 1 0 ]
+"752
+[v _ManuStringDescSize ManuStringDescSize `uc  1 e 1 0 ]
+"753
+[v _SerialNumStringDescSize SerialNumStringDescSize `uc  1 e 1 0 ]
+"754
+[v _SerialNumberStringDescSize SerialNumberStringDescSize `uc  1 e 1 0 ]
+"755
+[v _ConfigurationDescSize ConfigurationDescSize `uc  1 e 1 0 ]
+"757
+[v _KeyboardReportDescSize KeyboardReportDescSize `uc  1 e 1 0 ]
+"758
+[v _DefReportDescSize DefReportDescSize `uc  1 e 1 0 ]
+"16 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\usb_user_process.c
+[v _uusb_data_flag uusb_data_flag `S30  1 e 1 0 ]
+"171 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\MAIN.C
+[v _main main `(v  1 e 1 0 ]
+{
+"219
+} 0
+"29 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\usb_user_process.c
+[v _usb_data_process usb_data_process `(v  1 e 1 0 ]
+{
+"31
+[v usb_data_process@pReg pReg `*.39uc  1 a 2 28 ]
+"159
+} 0
+"929 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\usb_descriptor.c
+[v _USBD_disable USBD_disable `(v  1 e 1 0 ]
+{
+"936
+} 0
+"93 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\system_sleep.c
+[v _system_sleep system_sleep `(v  1 e 1 0 ]
+{
+"157
+} 0
+"74
+[v _out_sleep_init out_sleep_init `(v  1 e 1 0 ]
+{
+"84
+} 0
+"37
+[v _in_sleep_init in_sleep_init `(v  1 e 1 0 ]
+{
+"65
+} 0
+"48 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\MAIN.C
+[v _sys_init sys_init `(v  1 e 1 0 ]
+{
+"50
+[v sys_init@i i `uc  1 a 1 17 ]
+"139
+} 0
+"16 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\driver\TIME.C
+[v _timer0_init timer0_init `(v  1 e 1 0 ]
+{
+"26
+} 0
+"247 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\flash_process.c
+[v _e2_config_load e2_config_load `(v  1 e 1 0 ]
+{
+"260
+} 0
+"148 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\MAIN.C
+[v _power_on_self power_on_self `(v  1 e 1 0 ]
+{
+"150
+[v power_on_self@i i `uc  1 a 1 27 ]
+[v power_on_self@j j `uc  1 a 1 26 ]
+"164
+} 0
+"307 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\matrix_key.c
+[v _matrixkey_scan matrixkey_scan `(v  1 e 1 0 ]
+{
+"309
+[v matrixkey_scan@i i `uc  1 a 1 17 ]
+"392
+} 0
+"176 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_logo.c
+[v _set_led set_led `(v  1 e 1 0 ]
+{
+"179
+} 0
+"144 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\matrix_key.c
+[v _matrixkey_value matrixkey_value `(v  1 e 1 0 ]
+{
+"146
+[v matrixkey_value@j j `uc  1 a 1 12 ]
+"147
+[v matrixkey_value@y y `uc  1 a 1 11 ]
+[v matrixkey_value@x x `uc  1 a 1 10 ]
+"146
+[v matrixkey_value@i i `uc  1 a 1 9 ]
+"298
+} 0
+"73 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\userdefined_key.c
+[v _key_decode key_decode `(v  1 e 1 0 ]
+{
+"77
+[v key_decode@pRom pRom `*.33Cuc  1 a 3 5 ]
+"76
+[v key_decode@length length `ui  1 a 2 2 ]
+"75
+[v key_decode@key_index key_index `uc  1 a 1 8 ]
+[v key_decode@i i `uc  1 a 1 4 ]
+[v key_decode@j j `uc  1 a 1 1 ]
+"78
+[v key_decode@loop_count loop_count `uc  1 a 1 0 ]
+"938
+} 0
+"181 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_logo.c
+[v _led_hint led_hint `(v  1 e 1 0 ]
+{
+"183
+[v led_hint@i i `uc  1 a 1 22 ]
+"194
+} 0
+"35 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\driver\TIME.C
+[v _delayms delayms `(v  1 e 1 0 ]
+{
+[v delayms@time time `uc  1 a 1 wreg ]
+"37
+[v delayms@i i `ui  1 a 2 20 ]
+"35
+[v delayms@time time `uc  1 a 1 wreg ]
+[v delayms@time time `uc  1 a 1 19 ]
+"45
+} 0
+"63 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\matrix_key.c
+[v _key_process key_process `(v  1 e 1 0 ]
+{
+"65
+[v key_process@i i `uc  1 a 1 27 ]
+"127
+} 0
+"171 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_logo.c
+[v _clr_led clr_led `(v  1 e 1 0 ]
+{
+"174
+} 0
+"208
+[v _led_process led_process `(v  1 e 1 0 ]
+{
+"210
+[v led_process@i i `uc  1 a 1 19 ]
+"487
+} 0
+"42 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode12_zxb.c
+[v _led_mode_zxb led_mode_zxb `(v  1 e 1 0 ]
+{
+"44
+[v led_mode_zxb@i i `uc  1 a 1 28 ]
+[v led_mode_zxb@j j `uc  1 a 1 27 ]
+"106
+} 0
+"15 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 23 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 19 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 21 ]
+"53
+} 0
+"41 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode13_yzmb.c
+[v _led_mode_yzmb led_mode_yzmb `(v  1 e 1 0 ]
+{
+"43
+[v led_mode_yzmb@i i `uc  1 a 1 23 ]
+[v led_mode_yzmb@j j `uc  1 a 1 22 ]
+[v led_mode_yzmb@k k `uc  1 a 1 21 ]
+"89
+} 0
+"30 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode18_xlbh.c
+[v _led_mode_xilabianhuan led_mode_xilabianhuan `(v  1 e 1 0 ]
+{
+"32
+[v led_mode_xilabianhuan@x x `uc  1 a 1 27 ]
+[v led_mode_xilabianhuan@k k `uc  1 a 1 26 ]
+"144
+} 0
+"43 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode9_star.c
+[v _led_mode_star led_mode_star `(v  1 e 1 0 ]
+{
+"45
+[v led_mode_star@i i `uc  1 a 1 24 ]
+"77
+} 0
+"178 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode4_snake.c
+[v _led_mode_snake_2 led_mode_snake_2 `(v  1 e 1 0 ]
+{
+"180
+[v led_mode_snake_2@i i `uc  1 a 1 23 ]
+[v led_mode_snake_2@k k `uc  1 a 1 22 ]
+[v led_mode_snake_2@x x `uc  1 a 1 21 ]
+"260
+} 0
+"103
+[v _led_mode_snake_1 led_mode_snake_1 `(v  1 e 1 0 ]
+{
+"105
+[v led_mode_snake_1@x x `uc  1 a 1 22 ]
+[v led_mode_snake_1@k k `uc  1 a 1 21 ]
+"176
+} 0
+"34
+[v _led_mode_snake led_mode_snake `(v  1 e 1 0 ]
+{
+"36
+[v led_mode_snake@k k `uc  1 a 1 23 ]
+[v led_mode_snake@x x `uc  1 a 1 22 ]
+[v led_mode_snake@y y `uc  1 a 1 21 ]
+"100
+} 0
+"32 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode6_single.c
+[v _led_mode_single led_mode_single `(v  1 e 1 0 ]
+{
+"34
+[v led_mode_single@i i `uc  1 a 1 19 ]
+"50
+} 0
+"35 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode5_rolling.c
+[v _led_mode_roling led_mode_roling `(v  1 e 1 0 ]
+{
+"37
+[v led_mode_roling@i i `uc  1 a 1 23 ]
+"78
+} 0
+"31 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode2_on.c
+[v _led_mode_on led_mode_on `(v  1 e 1 0 ]
+{
+"33
+[v led_mode_on@i i `uc  1 a 1 19 ]
+"37
+} 0
+"123 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode7_liugong.c
+[v _led_mode_liuguang_u_d led_mode_liuguang_u_d `(v  1 e 1 0 ]
+{
+"126
+[v led_mode_liuguang_u_d@x x `ui  1 a 2 22 ]
+"125
+[v led_mode_liuguang_u_d@i i `uc  1 a 1 24 ]
+[v led_mode_liuguang_u_d@k k `uc  1 a 1 21 ]
+"167
+} 0
+"46
+[v _led_mode_liuguang_l_r led_mode_liuguang_l_r `(v  1 e 1 0 ]
+{
+"49
+[v led_mode_liuguang_l_r@x x `ui  1 a 2 22 ]
+"48
+[v led_mode_liuguang_l_r@i i `uc  1 a 1 25 ]
+[v led_mode_liuguang_l_r@k k `uc  1 a 1 24 ]
+"114
+} 0
+"31
+[v _led_mode_liuguang_l_r_w led_mode_liuguang_l_r_w `(v  1 e 1 0 ]
+{
+"33
+[v led_mode_liuguang_l_r_w@j j `uc  1 a 1 19 ]
+"37
+} 0
+"42 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode18_def.c
+[v _led_mode_def led_mode_def `(v  1 e 1 0 ]
+{
+"44
+[v led_mode_def@j j `uc  1 a 1 26 ]
+[v led_mode_def@i i `uc  1 a 1 25 ]
+"97
+} 0
+"39 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode14_chlp.c
+[v _led_mode_chlp led_mode_chlp `(v  1 e 1 0 ]
+{
+"41
+[v led_mode_chlp@i i `uc  1 a 1 21 ]
+[v led_mode_chlp@gtemp_x gtemp_x `uc  1 a 1 20 ]
+"107
+} 0
+"31 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode17_centre.c
+[v _led_mode_centre led_mode_centre `(v  1 e 1 0 ]
+{
+"33
+[v led_mode_centre@k k `uc  1 a 1 28 ]
+[v led_mode_centre@x x `uc  1 a 1 27 ]
+[v led_mode_centre@i i `uc  1 a 1 26 ]
+"106
+} 0
+"31 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode3_breath.c
+[v _led_mode_breath led_mode_breath `(v  1 e 1 0 ]
+{
+"33
+[v led_mode_breath@i i `uc  1 a 1 19 ]
+"70
+} 0
+"31 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode15_bhqf.c
+[v _led_mode_bhqf led_mode_bhqf `(v  1 e 1 0 ]
+{
+"33
+[v led_mode_bhqf@i i `uc  1 a 1 20 ]
+"58
+} 0
+"31 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode16_arrow.c
+[v _led_mode_arrow led_mode_arrow `(v  1 e 1 0 ]
+{
+"33
+[v led_mode_arrow@i i `uc  1 a 1 23 ]
+[v led_mode_arrow@k k `uc  1 a 1 22 ]
+[v led_mode_arrow@x x `uc  1 a 1 21 ]
+"101
+} 0
+"33 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_mode1x_wasd.c
+[v _led_mode_17 led_mode_17 `(v  1 e 1 0 ]
+{
+"35
+[v led_mode_17@j j `uc  1 a 1 22 ]
+[v led_mode_17@i i `uc  1 a 1 21 ]
+"98
+} 0
+"318 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\flash_process.c
+[v _led_def_save led_def_save `(v  1 e 1 0 ]
+{
+"322
+} 0
+"196 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_logo.c
+[v _clr_led_data clr_led_data `(v  1 e 1 0 ]
+{
+"199
+} 0
+"269 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\flash_process.c
+[v _cfg_mode_save cfg_mode_save `(v  1 e 1 0 ]
+{
+"310
+} 0
+"28 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\driver\flash.c
+[v _flash_save_info flash_save_info `(v  1 e 1 0 ]
+{
+"30
+[v flash_save_info@i i `uc  1 a 1 21 ]
+"28
+[v flash_save_info@addr addr `ui  1 p 2 19 ]
+"63
+} 0
+"20 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\system_sleep.c
+[v _off_led off_led `(v  1 e 1 0 ]
+{
+"28
+} 0
+"68 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_logo.c
+[v _pwm2_init pwm2_init `(v  1 e 1 0 ]
+{
+"169
+} 0
+"91 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\flash_process.c
+[v _cfg_load cfg_load `(v  1 e 1 0 ]
+{
+"93
+[v cfg_load@i i `uc  1 a 1 31 ]
+[v cfg_load@k k `uc  1 a 1 30 ]
+[v cfg_load@j j `uc  1 a 1 29 ]
+"186
+} 0
+"65
+[v _memcpy memcpy `(v  1 e 1 0 ]
+{
+"67
+[v memcpy@i i `uc  1 a 1 24 ]
+"65
+[v memcpy@ptr_d ptr_d `*.39uc  1 p 2 19 ]
+[v memcpy@ptr_s ptr_s `*.39uc  1 p 2 21 ]
+[v memcpy@lenght lenght `uc  1 p 1 23 ]
+"73
+} 0
+"195
+[v _load_led_para load_led_para `(v  1 e 1 0 ]
+{
+"238
+} 0
+"27
+[v _led_default_load led_default_load `(v  1 e 1 0 ]
+{
+"33
+} 0
+"42
+[v _checksum_flash checksum_flash `(uc  1 e 1 0 ]
+{
+[v checksum_flash@lenght lenght `uc  1 a 1 wreg ]
+"44
+[v checksum_flash@i i `uc  1 a 1 27 ]
+[v checksum_flash@check check `uc  1 a 1 26 ]
+"42
+[v checksum_flash@lenght lenght `uc  1 a 1 wreg ]
+[v checksum_flash@ptr ptr `*.33Cuc  1 p 3 19 ]
+"46
+[v checksum_flash@lenght lenght `uc  1 a 1 25 ]
+"53
+} 0
+"263 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\hid_process.c
+[v _hid_process hid_process `(v  1 e 1 0 ]
+{
+"380
+} 0
+"237
+[v _hid_get_fw_mode_info hid_get_fw_mode_info `(v  1 e 1 0 ]
+{
+"254
+} 0
+"73
+[v _flash_ctrl flash_ctrl `(v  1 e 1 0 ]
+{
+"186
+[v flash_ctrl@pRom pRom `*.33Cuc  1 a 3 0 ]
+"75
+[v flash_ctrl@i i `ui  1 a 2 7 ]
+[v flash_ctrl@length length `ui  1 a 2 4 ]
+"76
+[v flash_ctrl@x x `uc  1 a 1 9 ]
+[v flash_ctrl@j j `uc  1 a 1 6 ]
+"77
+[v flash_ctrl@err_id err_id `uc  1 a 1 3 ]
+"226
+} 0
+"72 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\driver\flash.c
+[v _flash_program flash_program `(v  1 e 1 0 ]
+{
+"75
+[v flash_program@pRom pRom `*.33Cuc  1 a 3 8 ]
+"74
+[v flash_program@i i `uc  1 a 1 11 ]
+[v flash_program@j j `uc  1 a 1 7 ]
+"72
+[v flash_program@addr addr `ui  1 p 2 26 ]
+[v flash_program@length length `uc  1 p 1 28 ]
+"136
+} 0
+"55 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\flash_process.c
+[v _memcpy_const memcpy_const `(v  1 e 1 0 ]
+{
+"57
+[v memcpy_const@i i `uc  1 a 1 25 ]
+"55
+[v memcpy_const@ptr_d ptr_d `*.39uc  1 p 2 19 ]
+[v memcpy_const@ptr_s ptr_s `*.33Cuc  1 p 3 21 ]
+[v memcpy_const@lenght lenght `uc  1 p 1 24 ]
+"63
+} 0
+"145 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\driver\flash.c
+[v _flash_clear flash_clear `(v  1 e 1 0 ]
+{
+[v flash_clear@bank bank `uc  1 a 1 wreg ]
+"147
+[v flash_clear@addr addr `ui  1 a 2 27 ]
+"145
+[v flash_clear@bank bank `uc  1 a 1 wreg ]
+"149
+[v flash_clear@bank bank `uc  1 a 1 26 ]
+"181
+} 0
+"36 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\hid_process.c
+[v _clear_in_fifo clear_in_fifo `(v  1 e 1 0 ]
+{
+"39
+} 0
+"75 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\flash_process.c
+[v _memset memset `(v  1 e 1 0 ]
+{
+"77
+[v memset@i i `uc  1 a 1 23 ]
+"75
+[v memset@ptr_d ptr_d `*.39uc  1 p 2 19 ]
+[v memset@dat dat `Cuc  1 p 1 21 ]
+[v memset@lenght lenght `uc  1 p 1 22 ]
+"82
+} 0
+"48 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\hal\hid_process.c
+[v _checksum_check checksum_check `(v  1 e 1 0 ]
+{
+"50
+[v checksum_check@i i `ui  1 a 2 29 ]
+"48
+[v checksum_check@length length `ui  1 p 2 19 ]
+[v checksum_check@ptr ptr `*.39uc  1 p 2 21 ]
+"63
+} 0
+"897 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\usb_descriptor.c
+[v _USBD_Init USBD_Init `(v  1 e 1 0 ]
+{
+"913
+} 0
+"915
+[v _USBD_SwBusInit USBD_SwBusInit `(v  1 e 1 0 ]
+{
+"921
+} 0
+"235 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\MAIN.C
+[v _HP_Intr HP_Intr `IIH(v  1 e 1 0 ]
+{
+"284
+[v HP_Intr@t t `uc  1 a 1 18 ]
+"341
+} 0
+"710 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\usb_descriptor.c
+[v _USBD_EP0_Handler USBD_EP0_Handler `(v  1 e 1 0 ]
+{
+"712
+[v USBD_EP0_Handler@i i `uc  1 a 1 6 ]
+"888
+} 0
+"641
+[v _USBD_SetInterface USBD_SetInterface `(v  1 s 1 USBD_SetInterface ]
+{
+"656
+} 0
+"442
+[v _USBD_SetFeature USBD_SetFeature `(v  1 s 1 USBD_SetFeature ]
+{
+"495
+} 0
+"597
+[v _USBD_SetConfig USBD_SetConfig `(v  1 s 1 USBD_SetConfig ]
+{
+"621
+} 0
+"498
+[v _USBD_SetAddress USBD_SetAddress `(v  1 s 1 USBD_SetAddress ]
+{
+"513
+} 0
+"308
+[v _USBD_GetStatus USBD_GetStatus `(v  1 s 1 USBD_GetStatus ]
+{
+"316
+[v USBD_GetStatus@temp temp `uc  1 a 1 5 ]
+"390
+} 0
+"623
+[v _USBD_GetInterface USBD_GetInterface `(v  1 s 1 USBD_GetInterface ]
+{
+"639
+} 0
+"675
+[v _USBD_GetDescriptor USBD_GetDescriptor `(v  1 s 1 USBD_GetDescriptor ]
+{
+"703
+} 0
+"516
+[v _USBD_GetDevStrDescriptor USBD_GetDevStrDescriptor `(v  1 s 1 USBD_GetDevStrDescriptor ]
+{
+"536
+} 0
+"557
+[v _USBD_ClassGetHidReport USBD_ClassGetHidReport `(v  1 s 1 USBD_ClassGetHidReport ]
+{
+"572
+} 0
+"539
+[v _USBD_ClassGetHidDes USBD_ClassGetHidDes `(v  1 s 1 USBD_ClassGetHidDes ]
+{
+"554
+} 0
+"265
+[v _USBD_Ep0_WriteTable USBD_Ep0_WriteTable `(v  1 s 1 USBD_Ep0_WriteTable ]
+{
+"279
+[v USBD_Ep0_WriteTable@i i `uc  1 a 1 4 ]
+"267
+[v USBD_Ep0_WriteTable@j j `uc  1 a 1 3 ]
+[v USBD_Ep0_WriteTable@ZPacket ZPacket `uc  1 a 1 2 ]
+"265
+[v USBD_Ep0_WriteTable@dat dat `*.25Cuc  1 p 2 3 ]
+[v USBD_Ep0_WriteTable@len len `uc  1 p 1 5 ]
+"306
+} 0
+"574
+[v _USBD_GetConfig USBD_GetConfig `(v  1 s 1 USBD_GetConfig ]
+{
+"595
+} 0
+"392
+[v _USBD_ClearFeature USBD_ClearFeature `(v  1 s 1 USBD_ClearFeature ]
+{
+"440
+} 0
+"171
+[v _USBD_Ep0_StatusIn USBD_Ep0_StatusIn `(v  1 s 1 USBD_Ep0_StatusIn ]
+{
+"173
+[v USBD_Ep0_StatusIn@overtime overtime `uc  1 a 1 1 ]
+"203
+} 0
+"658
+[v _USBD_ClassGetProtocol USBD_ClassGetProtocol `(v  1 s 1 USBD_ClassGetProtocol ]
+{
+"672
+} 0
+"249
+[v _USBD_Ep0_Write USBD_Ep0_Write `(v  1 s 1 USBD_Ep0_Write ]
+{
+[v USBD_Ep0_Write@len len `uc  1 a 1 wreg ]
+[v USBD_Ep0_Write@len len `uc  1 a 1 wreg ]
+"251
+[v USBD_Ep0_Write@len len `uc  1 a 1 2 ]
+"257
+} 0
+"206
+[v _USBD_Ep0_StatusOut USBD_Ep0_StatusOut `(v  1 s 1 USBD_Ep0_StatusOut ]
+{
+"208
+[v USBD_Ep0_StatusOut@overtime overtime `uc  1 a 1 1 ]
+"237
+} 0
+"496 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\led\led_logo.c
+[v _timer_int_process timer_int_process `(v  1 e 1 0 ]
+{
+"707
+} 0
+"157 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\usb_descriptor.c
+[v ___delayus __delayus `(v  1 e 1 0 ]
+{
+[v ___delayus@time time `uc  1 a 1 wreg ]
+[v ___delayus@time time `uc  1 a 1 wreg ]
+[v ___delayus@time time `uc  1 a 1 0 ]
+"160
+} 0
+"164
+[v _USBD_Ep0_Stall USBD_Ep0_Stall `(v  1 s 1 USBD_Ep0_Stall ]
+{
+"168
+} 0
+"99
+[v _USBD_Calibration USBD_Calibration `(v  1 e 1 0 ]
+{
+"116
+[v USBD_Calibration@curoffset curoffset `uc  1 a 1 2 ]
+"117
+[v USBD_Calibration@signal signal `uc  1 a 1 0 ]
+"103
+[v USBD_Calibration@uclk uclk `uc  1 a 1 1 ]
+"155
+} 0
+"66
+[v _USBD_CalibrationInit USBD_CalibrationInit `(v  1 e 1 0 ]
+{
+"75
+[v USBD_CalibrationInit@Count Count `uc  1 a 1 5 ]
+"74
+[v USBD_CalibrationInit@flag flag `uc  1 a 1 4 ]
+"97
+} 0
+"8 C:\Users\ADMINI~1\AppData\Local\Temp\mcu\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"11
+[v ___awdiv@quotient quotient `i  1 a 2 2 ]
+"12
+[v ___awdiv@sign sign `uc  1 a 1 1 ]
+[v ___awdiv@counter counter `uc  1 a 1 0 ]
+"8
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"42
+} 0
+"226 C:\Users\Administrator\Desktop\temp\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\SE96K_0026_GZS_400US_LINE_MONO_claude\MAIN.C
+[v _none_int none_int `(v  1 e 1 0 ]
+{
+"228
+} 0

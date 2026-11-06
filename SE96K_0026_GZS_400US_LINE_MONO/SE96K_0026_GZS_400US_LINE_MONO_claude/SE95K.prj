@@ -1,0 +1,135 @@
+[Project]
+Project=ZCW-ICE
+[File Count]
+Count=54
+[Filter Index]
+Index=2
+[Project Files]
+File0=driver\BootLoader_bin.c
+File1=defines.h
+File2=driver\flash.c
+File3=driver\flash_default.c
+File4=hal\flash_process.c
+File5=hal\flash_process.h
+File6=hal\hid_process.c
+File7=hal\hid_process.h
+File8=hal\key_code_define.h
+File9=driver\led_default_tbl.c
+File10=led\led_logo.c
+File11=led\led_logo.h
+File12=led\led_logo_tbl.h
+File13=led\led_mode10_jiguang.c
+File14=led\led_mode11_sbzl.c
+File15=led\led_mode12_zxb.c
+File16=led\led_mode13_yzmb.c
+File17=led\led_mode14_chlp.c
+File18=led\led_mode15_bhqf.c
+File19=led\led_mode16_arrow.c
+File20=led\led_mode17_centre.c
+File21=led\led_mode18_def.c
+File22=led\led_mode18_xlbh.c
+File23=led\led_mode1x_wasd.c
+File24=led\led_mode2_on.c
+File25=led\led_mode3_breath.c
+File26=led\led_mode4_snake.c
+File27=led\led_mode5_rolling.c
+File28=led\led_mode6_single.c
+File29=led\led_mode7_liugong.c
+File30=led\led_mode9_star.c
+File31=m9f951.h
+File32=MAIN.C
+File33=main.h
+File34=hal\matrix_key.c
+File35=hal\matrix_key.h
+File36=hal\matrix_key_tbl_mac.h
+File37=hal\matrix_key_tbl_mac_fn.h
+File38=hal\matrix_key_tbl_win.h
+File39=hal\matrix_key_tbl_win_fn.h
+File40=system_sleep.c
+File41=system_sleep.h
+File42=driver\TIME.C
+File43=driver\time.h
+File44=types.h
+File45=usb_cfg_info.h
+File46=usb_descriptor.c
+File47=usb_descriptor.h
+File48=usb_user_process.c
+File49=USBD_CORE.H
+File50=hal\userdefined_key.c
+File51=hal\wheel.c
+File52=led\wheel_led.c
+File53=led\wheel_led.h
+[Settings]
+Device=M9F951
+ConfigBitValue0=192
+ConfigBitValue1=4
+ConfigBitValue2=0
+ConfigBitValue3=11
+ConfigBitValue4=1
+ConfigBitValue5=148
+ConfigBitValue6=254
+ConfigBitValue7=255
+ConfigBitValue8=66
+Output=.
+PostBuild=0
+PostBuildCommand=
+ConfigBitValue9=0
+[Files]
+File0=hal\matrix_key_tbl_win_lock.h|1 5 1651 24 730
+File1=driver\BootLoader_bin.c|1 5 1651 24 730
+File2=MAIN.C|1 5 1681 24 692
+File3=hal\key_code_define.h|1 5 1650 24 646
+OpenFileCounts=2
+File4=hal\userdefined_key.c|1 5 1650 24 646
+File5=MAIN.C|1 5 1650 24 646
+File6=hal\matrix_key_tbl_mac.h|1 5 1650 24 646
+File7=led\led_logo.c|1 5 1650 24 646
+File8=hal\flash_process.c|1 5 1650 24 646
+File9=led\wheel_led.c|1 5 1650 24 646
+File10=led\led_logo_tbl.h|1 5 1650 24 646
+File11=driver\flash.c|1 5 1650 24 646
+File12=hal\hid_process.c|1 5 1650 24 646
+File13=driver\BootLoader_bin.c|1 5 1650 24 646
+File14=hal\flash_process.h|1 5 1650 24 646
+File15=system_sleep.c|1 5 1650 24 646
+File16=led\led_mode18_def.c|1 5 1650 24 646
+File17=hal\matrix_key.c|1 5 1650 24 646
+File18=led\led_logo.h|1 5 1650 24 646
+File19=usb_descriptor.h|1 5 1650 24 646
+File20=hal\matrix_key_tbl_win.h|1 5 1669 24 714
+File21=hal\matrix_key_tbl_mac_fn.h|1 5 1669 24 714
+File22=hal\matrix_key_tbl_win_fn.h|1 5 1669 24 714
+File23=system_sleep.h|1 5 1669 24 714
+File24=hal\hid_process.c|1 5 1669 24 714
+File25=defines.h|1 5 1669 24 714
+[Break]
+Count=0
+BP0=37 407 1
+BP1=1 64 1
+[Watch0]
+Count=1
+Watch0=matrix_status 0
+Watch1=matrix_status 0
+Watch2=led_cur_mode 0
+Watch3=pwm_duty_array 0
+Watch4=device_para_tbl 0
+Watch5=device_para_tbl 0
+Watch6=scan_index 0
+Watch7=usys_ctrl_reg 0
+Watch8=bat_power_value_cur 0
+Watch9=bat_power_value_avg 0
+Watch10=uart_rx_buff 0
+Watch11=bat_power_value_avg 0
+[Watch1]
+Count=0
+[Watch2]
+Count=0
+[RomArea]
+Start=1000
+End=7F7F
+CodeOffset=1000
+Operation=2
+WarningLevel=-2
+[ParaSetting]
+ReadOnly=1
+ShowChipName=1

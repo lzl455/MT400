@@ -1,0 +1,1 @@
+按住左 CTRL_L + WIN_L 上电进入 BOOT

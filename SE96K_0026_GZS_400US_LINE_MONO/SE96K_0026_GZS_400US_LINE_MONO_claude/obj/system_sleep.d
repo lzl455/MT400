@@ -1,0 +1,1 @@
+ obj/system_sleep.d  obj/system_sleep.p1:  system_sleep.c ./led/wheel_led.h ./driver/time.h main.h ./hal/hid_process.h USBD_CORE.H ./hal/wheel.h ./led/led_logo.h ./hal/matrix_key.h ./led/led_logo_tbl.h ./hal/flash_process.h ./hal/key_code_define.h usb_cfg_info.h types.h defines.h ./hal/userdefined_key.h system_sleep.h

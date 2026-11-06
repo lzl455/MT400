@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "e:/博仪创/产品资料/product_file/M9F951_9520/G_国之声/400US/有线 -2/software/trunk/SE96K_0026_GZS_400US_LINE_MONO",
+      "program": "e:/博仪创/产品资料/product_file/M9F951_9520/G_国之声/400US/有线 -2/software/trunk/SE96K_0026_GZS_400US_LINE_MONO/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}

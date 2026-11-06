@@ -1,0 +1,122 @@
+[Project]
+Project=ZCW-ICE
+[File Count]
+Count=14
+[Filter Index]
+Index=2
+[Project Files]
+File0=defines.h
+File1=flash.c
+File2=hid_process.c
+File3=hid_process.h
+File4=m9f951.h
+File5=MAIN.C
+File6=main.h
+File7=time.c
+File8=types.h
+File9=usb_cfg_info.h
+File10=usb_descriptor.c
+File11=usb_descriptor.h
+File12=usb_user_process.c
+File13=USBD_CORE.H
+File14=usb_descriptor.c
+File15=usb_descriptor.h
+File16=usb_user_process.c
+File17=USBD_CORE.H
+File18=usb_cfg_info.h
+File19=usb_descriptor.c
+File20=usb_descriptor.h
+File21=usb_user_process.c
+File22=USBD_CORE.H
+File23=usbstatic.lpp
+File24=led\led_mode9_star.c
+File25=m9f951.h
+File26=MAIN.C
+File27=main.h
+File28=hal\matrix_key.c
+File29=hal\matrix_key.h
+File30=system_sleep.c
+File31=system_sleep.h
+File32=driver\TIME.C
+File33=driver\time.h
+File34=types.h
+File35=driver\uart.c
+File36=driver\uart.h
+File37=usb_cfg_info.h
+File38=usb_descriptor.c
+File39=usb_descriptor.h
+File40=usb_user_process.c
+File41=USBD_CORE.H
+[Settings]
+Device=M9F951
+ConfigBitValue0=192
+ConfigBitValue1=4
+ConfigBitValue2=0
+ConfigBitValue3=11
+ConfigBitValue4=1
+ConfigBitValue5=148
+ConfigBitValue6=254
+ConfigBitValue7=255
+ConfigBitValue8=66
+Output=.
+PostBuild=0
+PostBuildCommand=
+ConfigBitValue9=0
+[Files]
+File0=MAIN.C|1 5 1664 24 656
+File1=time.c|1 5 1320 24 904
+File2=defines.h|1 5 1320 24 904
+File3=usb_user_process.c|1 5 1320 24 904
+OpenFileCounts=1
+File4=hid_process.c|1 5 1320 24 904
+File5=hid_process.h|1 5 1320 24 904
+File6=flash.c|1 5 1320 24 904
+File7=usb_descriptor.c|1 5 1320 24 904
+File8=hid_process.h|1 5 1670 24 629
+File9=hal\i2c.c|1 5 1670 24 703
+File10=driver\TIME.C|1 5 1670 24 703
+File11=driver\flash.c|1 5 1670 24 703
+File12=USBD_CORE.H|1 5 1646 24 684
+File13=defines.h|1 78 1504 78 539
+File14=led\led.h|1 0 1426 0 461
+File15=hal\matrix_key_tbl.h|1 26 1452 26 487
+File16=driver\uart.c|1 104 936 104 565
+File17=defines.h|1 75 1104 75 527
+File18=led\led_mode3_rolling.c|1 100 1183 100 632
+File19=led\led_mode2_snake.c|1 225 1033 225 898
+File20=usb_user_process.c|1 275 1283 275 948
+File21=defines.h|1 75 1104 75 527
+File22=types.h|1 25 1494 25 484
+File23=main.h|1 0 1469 0 459
+File24=USBD_CORE.H|1 150 907 150 676
+[Break]
+Count=0
+BP0=6 345 1
+BP1=1 182 1
+[Watch0]
+Count=2
+Watch0=out_report_data 0
+Watch1=matrix_status 0
+Watch2=out_report_data 0
+Watch3=i 0
+Watch4=fifo_addr 0
+Watch5=out_report_data 0
+Watch6=check_sum 0
+Watch7=flash_fifo 0
+Watch8=j 0
+Watch9=sk1300_length 0
+Watch10=pRom 0
+Watch11=UsbEp0Buffer 0
+[Watch1]
+Count=0
+[Watch2]
+Count=0
+[RomArea]
+Start=000
+End=FFF
+CodeOffset=
+Operation=2
+WarningLevel=-2
+[ParaSetting]
+ReadOnly=1
+ShowChipName=1
