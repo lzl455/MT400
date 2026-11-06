@@ -1,15 +1,16 @@
 [Project]
 Project=ZCW-ICE
 [File Count]
-Count=5
+Count=6
 [Filter Index]
 Index=2
 [Project Files]
 File0=boot_image.c
-File1=defines.h
-File2=flash.c
-File3=m9f951.h
-File4=MAIN.C
+File1=boot_image.h
+File2=defines.h
+File3=flash.c
+File4=m9f951.h
+File5=MAIN.C
 [Settings]
 Device=M9F951
 ConfigBitValue0=192

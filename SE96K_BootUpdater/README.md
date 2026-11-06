@@ -17,8 +17,8 @@
 | `Updater.prj` | ZCW 工程，芯片配置与 App 相同，`CodeOffset=1000`（与 App 一样从 0x1000 运行） |
 | `MAIN.C` | 更新流程 |
 | `flash.c` | 整页擦写 + 回读校验（IAP 流程同 App/Boot 的 `flash.c`） |
-| `boot_image.c` | 新 Boot 镜像，**由 `tools/hex2c.py` 生成** |
-| `tools/hex2c.py` | 把 Boot 工程的 `output/SE95K.hex` 转成 `boot_image.c` |
+| `boot_image.c` / `boot_image.h` | 新 Boot 镜像及其项目ID、版本号，**由 `tools/hex2c.py` 生成** |
+| `tools/hex2c.py` | 把 Boot 工程的 `output/SE95K.hex` 转成 `boot_image.c` / `.h` |
 
 ## 生成步骤
 
@@ -36,17 +36,37 @@
 > 仓库里当前的 `boot_image.c` 是用**旧 Boot**（版本 1）生成的占位文件。用它编出来的
 > Updater 发现 Boot 区内容一致，什么都不写，直接进入 Boot。正式使用前务必按上面步骤重新生成。
 
+## 固件标识（bin 文件偏移 0x5FF0）
+
+Updater 在 0x6FF0 放了 16 字节标识，位置和格式都与正式 App 的 `fw_info` 相同，
+驱动用同一段代码读取，再看 `[8..10]` 区分：
+
+| 偏移 | 正式 App.bin | Updater.bin |
+| --- | --- | --- |
+| 0x5FF0–0x5FF3 | 项目ID ID3 ID2 ID1 ID0（`28 00 96 00`） | 新 Boot 的项目ID（同上顺序） |
+| 0x5FF4 | App 版本号 | **将写入的新 Boot 版本号** |
+| 0x5FF5–0x5FF7 | `02 00 01` | `00 00 00` |
+| 0x5FF8–0x5FFF | `BYKC-V10` | **`UPD-BOOT`** |
+
+驱动建议：
+
+- 用户选了 bin 文件后，`0x5FF8..0x5FFA == "UPD"` 的按"升级 Boot"流程处理，否则按普通 App 处理。
+  普通 App 流程中如果发现是 Updater，应拒绝（否则键盘会停在 Boot，看起来像"变砖"）。
+- 项目ID的 ID0/ID1（0x5FF3、0x5FF2 = `00 96`）与 Boot 返回的不一致时拒绝。
+- 第 0x5FF4 字节即 `NEW_BOOT_VER`：Boot 当前版本已等于它就跳过 Updater；
+  Updater 运行后 Boot 版本等于它才算成功。驱动不必再写死版本号。
+
 ## 驱动侧流程
 
 全部使用现有协议，不需要新命令：
 
 1. 向 App 下发跳 Boot 命令（App 命令头为 `0x0F`：`0F 1E 55 AA 00 FF`），等待 Boot 枚举
    （VID 0x32C2 / PID 0x001B，之后 Boot 的命令头为 `0x0E`）。
-2. 读 Boot 信息（`0x0E 0x20`），记下返回的版本号；如果已是新版本，跳到第 6 步。
+2. 读 Boot 信息（`0x0E 0x20`），返回的版本号（`in[6]`）已等于 Updater.bin 偏移 0x5FF4 的值，跳到第 6 步。
 3. 用 W_FIFO + W_FLASH 把 **Updater 固件**写入（和写 App 完全一样）。
 4. 下发 APP 命令（`0x0E 0x1E`），Boot 复位并运行 Updater。
 5. Updater 约 0.2 s 内完成更新并软复位进入新 Boot。驱动等待 Boot 重新枚举
-   （建议超时 5 s），再读一次 Boot 信息，确认版本号已变成新版本。
+   （建议超时 5 s），再读一次 Boot 信息，确认版本号等于 Updater.bin 偏移 0x5FF4 的值。
 6. 写入**正式 App**，下发 APP 命令，完成。
 
 第 5 步超时没有枚举 → 说明 Updater 停机（写入失败），提示用户**重新插拔**；重新上电后

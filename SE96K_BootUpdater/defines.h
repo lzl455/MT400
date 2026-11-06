@@ -27,6 +27,8 @@
 #define iBOOT_PID_OFFSET        0x08        // 项目ID 在版本信息中的偏移
 #define iBOOT_TAG_OFFSET        0x0D        // 尾标记 AA 55 5A 的偏移
 
+#define iUPD_INFO_ADDR          0x6FF0      // Updater 标识信息, 与 App fw_info 同址
+
 //----------------------------------------------------------------------------;
 // 跳转 Boot 标志, 与 App usb_user_process.c / Boot MAIN.C 一致
 //

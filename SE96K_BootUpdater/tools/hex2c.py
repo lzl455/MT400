@@ -10,9 +10,10 @@
     * 数据只能落在 0x0000-0x0FFF (Boot 区), 否则报错
     * 0x0FFD-0x0FFF 必须是 Boot 版本信息尾标记 AA 55 5A
     * 0x0FF8-0x0FFB 为项目 ID, 打印出来供人工核对
-生成:
-    boot_image[4096]       Boot 区完整镜像 (未使用字节填 0xFF)
-    BOOT_IMAGE_SUM         镜像 16 位累加和, Updater 运行时校验
+生成 (与输出 .c 同目录):
+    boot_image.c   boot_image[4096] Boot 区完整镜像 (未使用字节填 0xFF)
+                   boot_image_sum   镜像 16 位累加和, Updater 运行时校验
+    boot_image.h   BOOT_IMAGE_VER / BOOT_IMAGE_PID0~3, 供 Updater 标识信息使用
 """
 import sys
 import os
@@ -106,7 +107,30 @@ def main():
     with open(out, 'w', encoding='utf-8', newline='\n') as f:
         f.write('\n'.join(lines))
 
+    hdr = os.path.join(os.path.dirname(os.path.abspath(out)), 'boot_image.h')
+    h = []
+    h.append('/' + '*' * 79)
+    h.append('* 文件名称: boot_image.h')
+    h.append('*')
+    h.append('* 功能说明: 新 BootLoader 镜像信息')
+    h.append('*           本文件由 tools/hex2c.py 自动生成, 请勿手工修改')
+    h.append('*' * 79 + '/')
+    h.append('#ifndef _BOOT_IMAGE_H_')
+    h.append('#define _BOOT_IMAGE_H_')
+    h.append('')
+    h.append('#define BOOT_IMAGE_PID0         0x%02X' % pid[0])
+    h.append('#define BOOT_IMAGE_PID1         0x%02X' % pid[1])
+    h.append('#define BOOT_IMAGE_PID2         0x%02X' % pid[2])
+    h.append('#define BOOT_IMAGE_PID3         0x%02X' % pid[3])
+    h.append('#define BOOT_IMAGE_VER          %d' % ver)
+    h.append('')
+    h.append('#endif')
+    h.append('')
+    with open(hdr, 'w', encoding='utf-8', newline='\n') as f:
+        f.write('\n'.join(h))
+
     print('输出: %s' % os.path.abspath(out))
+    print('输出: %s' % hdr)
     print('项目ID: %02X %02X %02X %02X  Boot版本: %d  累加和: 0x%04X  使用页数: %d/32'
           % (pid[0], pid[1], pid[2], pid[3], ver, total, pages))
 
