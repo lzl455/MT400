@@ -55,13 +55,13 @@
 
 #define iPROJECT_ID_0           0x00
 #define iPROJECT_ID_1           0x96
-#define iPROJECT_ID_2           0xFF
-#define iPROJECT_ID_3           0x01
+#define iPROJECT_ID_2           0x00    // 与 App 工程(SE96K_0026) defines.h 一致
+#define iPROJECT_ID_3           0x28
 
 //----------------------------------------------------------------------------;
 // 程序版本定义区 程序版本升级编号
 //
-#define iVERSION_ID             1
+#define iVERSION_ID             2
 
 //-----------------------------------------------------------------------------;
 // 配置区

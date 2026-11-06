@@ -280,8 +280,10 @@ void hid_process(void)
                     }
 
                     if(iACK == in_report_data[0x02])
-                    {
-		                delayms(5);
+                    {                           // 与 App 跳转 BOOT 流程一致:
+		                delayms(2);             // 先断开 USB, 让主机识别拔出后再复位
+                        USBCON = 0x00;
+		                delayms(200);
                         Reset();
                     }
 

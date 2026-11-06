@@ -20,14 +20,32 @@ extern void USBD_CalibrationInit(void);
 unsigned char               bootloader_val[4] @ 0X0280;
 
 //-----------------------------------------------------------------------------;
-#define iPORT_A            0
-#define iPORT_B            1 
-#define iPORT_C            2
-#define iPORT_D            3
-#define iPORT_E            4
+// 进 BOOT 按键定义 (与 App 工程矩阵一致, 见 App hal/matrix_key_tbl_win.h 与
+// led/led_logo.c timer_int_process):
+//   列线: C0~C7 = PB0~PB7, C8~C15 = PC0~PC7, C16~C20 = PD0~PD4 (低电平扫描)
+//   行线: R0 = PA0, R1 = PA1, R2 = PE0, R3 = PE3, R4 = PE4, R5 = PE5
+//   行状态位与 App matrix_status[] 相同: R0=bit2 ... R5=bit7
+//
+// 上电时按住 左CTRL(C0 R0) + 左WIN(C1 R0) 进入 BOOT
+//
+#define iBOOT_ROW_R0            0x04            // PA0
+#define iBOOT_ROW_R1            0x08            // PA1
+#define iBOOT_ROW_R2            0x10            // PE0
+#define iBOOT_ROW_R3            0x20            // PE3
+#define iBOOT_ROW_R4            0x40            // PE4
+#define iBOOT_ROW_R5            0x80            // PE5
 
-#define iDIR_IN            0
-#define iDIR_OUT           1
+#define iBOOT_KEY0_COL          (1<<0)          // CTRL_L 列 PB0
+#define iBOOT_KEY0_ROW          iBOOT_ROW_R0    // CTRL_L 行 PA0
+#define iBOOT_KEY1_COL          (1<<1)          // WIN_L  列 PB1
+#define iBOOT_KEY1_ROW          iBOOT_ROW_R0    // WIN_L  行 PA0
+
+#define iBOOT_KEY_CHECK_TIMES   3               // 连续检测次数(消抖)
+
+#define iBOOT_FLAG_0            0x3C            // App 跳转 BOOT 标志, 与 App
+#define iBOOT_FLAG_1            0xC3            // usb_user_process.c 保持一致
+#define iBOOT_FLAG_2            0x55
+#define iBOOT_FLAG_3            0xAA
 
 //-----------------------------------------------------------------------------;
 // 表格定义区
@@ -55,15 +73,15 @@ const unsigned char boot_fw_vs[] @0x0FF0 =
 };
 
 const unsigned char boot_key_tbl[] @0x0FE8 =
-{												// ESC PB0 PE5
-    iPORT_B,									// port
-    (1<<0),										// pin
-    (1<<0),										// check
+{												// CTRL_L C0(PB0) R0(PA0)
+    0x01,										// port B
+    iBOOT_KEY0_COL,								// 列
+    iBOOT_KEY0_ROW,								// 行 (App matrix_status 位)
     0xAA,										//
-												// WIN PB1 PE0
-    iPORT_B,									// port
-    (1<<1),										// pin
-    (1<<0),										// check
+												// WIN_L  C1(PB1) R0(PA0)
+    0x01,										// port B
+    iBOOT_KEY1_COL,								// 列
+    iBOOT_KEY1_ROW,								// 行 (App matrix_status 位)
     0x55,										//
 };
 
@@ -71,51 +89,6 @@ const unsigned char boot_key_tbl[] @0x0FE8 =
 // 代码区                                                                      ;
 //=============================================================================;
 
-void port_set(unsigned char port, unsigned char pin, unsigned char dir)
-{
-    if(iPORT_B==port)
-	{
-	    ANSB &= ~pin;
-	    if(iDIR_IN==dir)
-	    {										// 输入
-            PUB |= pin;
-            OEB &= ~pin;
-		}
-	    else
-	    {										// 输出低
-            OEB |= pin;
-			IOB &= ~pin;
-	    }
-	}
-	else if(iPORT_C==port)
-	{
-	    ANSC &= ~pin;
-	    if(iDIR_IN==dir)
-	    {										// 输入
-            PUC |= pin;
-            OEC &= ~pin;
-		}
-	    else
-	    {										// 输出低
-            OEC |= pin;
-			IOC &= ~pin;
-	    }
-	}
-	else if(iPORT_D==port)
-	{
-	    ANSD &= ~pin;
-	    if(iDIR_IN==dir)
-	    {										// 输入
-            PUD |= pin;
-            OED &= ~pin;
-		}
-	    else
-	    {										// 输出低
-            OED |= pin;
-			IOD &= ~pin;
-	    }
-	}
-}
 void memcpy(unsigned char  *ptr_d, unsigned char *ptr_s, unsigned char lenght)
 {
 	for(unsigned char i=0; i<lenght; i++)
@@ -127,85 +100,144 @@ void memcpy(unsigned char  *ptr_d, unsigned char *ptr_s, unsigned char lenght)
 }
 
 /******************************************************************************
+* 函数名称: boot_io_init()
+* 功能描述: 矩阵 IO 初始化
+* 说    明: 与 App 工程 MAIN.C sys_init() 中 IO 配置一致
+******************************************************************************/
+static void boot_io_init(void)
+{
+//IOA  PA0/PA1 行输入上拉
+    ANSA = 0x00;
+    PUA = 0x03;                                 //0:上拉关闭 1:上拉使能
+    PDA = 0x00;                                 //0:下拉关闭 1:下拉使能
+    OEA = 0xFC;                                 //0:输入 1:输出
+    IOA = 0xFF;                                 //IO口数据
+//IOB  列输出高
+    ANSB = 0x00;
+    PUB = 0x00;
+    PDB = 0x00;
+    OEB = 0xFF;
+    IOB = 0xFF;
+//IOC  列输出高
+    ANSC = 0x00;
+    PUC = 0x00;
+    PDC = 0x00;
+    OEC = 0xFF;
+    IOC = 0xFF;
+//IOD  列输出高
+    ANSD = 0x00;
+    PUD = 0x00;
+    PDD = 0x00;
+    OED = 0xFF;
+    IOD = 0xFF;
+//IOE  PE0/PE3/PE4/PE5 行输入上拉
+    ANSE = 0x00;
+    PUE = 0xFF;
+    PDE = 0x00;
+    OEE = 0x00;
+    IOE = 0xFF;
+//IOF
+    ANSF = 0x00;
+    IOFODS0 = 0x03;
+    IOFODS1 = 0x03;
+    PUF = 0x00;
+    PDF = 0x0E;
+    OEF = 0xF0;
+    IOF = 0xFF;
+}
+
+/******************************************************************************
+* 函数名称: boot_col_scan()
+* 功能描述: 拉低 PB 口指定列, 读取行状态
+* 返 回 值: 行状态, 位定义与 App matrix_status[] 相同
+******************************************************************************/
+static unsigned char boot_col_scan(unsigned char col)
+{
+    unsigned char row = 0;
+
+    IOB = ~col;
+    delayms(1);
+
+    if(!IOE5)
+        row |= iBOOT_ROW_R5;
+    if(!IOE4)
+        row |= iBOOT_ROW_R4;
+    if(!IOE3)
+        row |= iBOOT_ROW_R3;
+    if(!IOE0)
+        row |= iBOOT_ROW_R2;
+    if(!IOA1)
+        row |= iBOOT_ROW_R1;
+    if(!IOA0)
+        row |= iBOOT_ROW_R0;
+
+    IOB = 0xFF;
+    return row;
+}
+
+/******************************************************************************
+* 函数名称: boot_key_check()
+* 功能描述: 检测上电时是否按住进 BOOT 组合键
+* 返 回 值: 1 进入 BOOT; 0 跳转 App
+* 说    明: 两列上只允许按下指定按键, 连续 iBOOT_KEY_CHECK_TIMES 次一致才有效
+******************************************************************************/
+static unsigned char boot_key_check(void)
+{
+    unsigned char i;
+
+    boot_io_init();
+    delayms(5);
+
+    for(i=0; i<iBOOT_KEY_CHECK_TIMES; i++)
+    {
+        if((iBOOT_KEY0_ROW != boot_col_scan(iBOOT_KEY0_COL))
+            || (iBOOT_KEY1_ROW != boot_col_scan(iBOOT_KEY1_COL)))
+        {
+            return 0;
+        }
+        delayms(5);
+    }
+    return 1;
+}
+
+/******************************************************************************
 * 函数名称: main()
 * 功能描述: 主函数
 * 说    明:
 ******************************************************************************/
 void main(void)
 {
-    unsigned char matrix_status[2] = {0};
-
     GIEL = 0;
-    GIEH = 0;                                    // 关中断
-    USBCON = 0X00;                                // 失能USB
+    GIEH = 0;                                   // 关中断
+    USBCON = 0X00;                              // 失能USB
 
-    const unsigned char *pRom = (const unsigned char *)APP_StartAddr;    //查询升级标志
+    const unsigned char *pRom = (const unsigned char *)APP_StartAddr;
     if((*pRom != 0XFF) || (*(pRom+1) != 0XFF))
-    {
-       if(!SOFTRST)
-        {                                        // 非软复位
-//上电外部IO状态强制停留Boot区
-            delayms(5);
-            ANSA = 0x00;
-            PUA = 0x03;                         //0:上拉关闭 1:上拉使能
-            PDA = 0x00;                         //0:下拉关闭 1:下拉使能
-			IOA = 0xFF;
-            OEA = 0xFC;                         //0:输入 1:输出
-
-            ANSE = 0x00;
-            PUE = 0xFF;                         //0:上拉关闭 1:上拉使能
-            PDE = 0x00;                         //0:下拉关闭 1:下拉使能
-			IOE = 0xFF;
-            OEE = 0x00;                         //0:输入 1:输出
-
-            ANSB = 0x00;
-            PUB = 0x00;                         //0:上拉关闭 1:上拉使能
-            PDB = 0x00;                         //0:下拉关闭 1:下拉使能
-			IOB = 0xFF;
-            OEB = 0xFF;                         //0:输入 1:输出
-		
-			ANSF = 0x00;
-			IOFODS0 = 0x03;
-			IOFODS1 = 0x03;
-			PUF = 0x00;                                 //0:上拉关闭 1:上拉使能
-			PDF = 0x0E;                                 //0:下拉关闭 1:下拉使能
-			OEF = 0xF0;                                 //0:输入 1:输出
-			IOF = 0xFF;                                 //IO口数据
-
-			IOB0 = 0;
-            delayms(1);
-            matrix_status[0] = (~IOA)&0x03;
-
-			IOB0 = 1;
-			IOB1 = 0;
-            delayms(1);
-            matrix_status[1] |= (~IOA)&0x03;
-
-	        if((0x01 != matrix_status[0]) 
-	            || (0x01 != matrix_status[1]))
+    {                                           // 用户区不为空
+        if(!SOFTRST)
+        {                                       // 上电复位: 检测组合键
+            if(!boot_key_check())
             {
-                #asm 
+                #asm
                 goto APP_StartAddr
                 #endasm
             }
-            goto into_bootloader;
         }
-
-        if((0x3C != bootloader_val[0])
-            ||(0xC3 != bootloader_val[1])
-            ||(0x55 != bootloader_val[2])
-            ||(0xAA != bootloader_val[3]))
-        {
+        else if((iBOOT_FLAG_0 != bootloader_val[0])
+            ||(iBOOT_FLAG_1 != bootloader_val[1])
+            ||(iBOOT_FLAG_2 != bootloader_val[2])
+            ||(iBOOT_FLAG_3 != bootloader_val[3]))
+        {                                       // 软复位且无升级标志
             #asm
-            goto APP_StartAddr    //无升级标志且用户区不为空跳转用户区
+            goto APP_StartAddr
             #endasm
         }
-
-        bootloader_val[0] = 0;
-        bootloader_val[1] = 0;
-        bootloader_val[2] = 0;
-        bootloader_val[3] = 0;
     }
+
+    bootloader_val[0] = 0;                      // 清除升级标志
+    bootloader_val[1] = 0;
+    bootloader_val[2] = 0;
+    bootloader_val[3] = 0;
 
 into_bootloader:
 	ANSF &= ~0X03;	//DP、DN端口设为数字模式
@@ -235,35 +267,7 @@ into_bootloader:
 
             UE1CON = UE1CON_RSET;
             UE1IOPS = 0x00;
-	        usbcalisum = 0;
-	        usbcalimax = 0;
-	        usbcalimin = 0XFF;
-	        usbcalisimplecnt = 0;
-	        USHC = 1;
-            
-	        unsigned char flag = 0;
-	        unsigned char Count = 0;
-	        if(USHC)
-	        {
-	        	if(UCLKCON>=0X20)
-	        	{
-	        		Count = (UCLKCON - 0X20)/2;
-	        	}
-	        	else
-	        	{
-	        		Count = (0X20-UCLKCON)/2;
-	        		flag=1;
-	        	}
-	        	CALLOCK = 0x55;
-	        	CALLOCK = 0xAA;
-	        	if(flag)
-	        	    IRCCAL-=Count;
-	        	else
-	        		IRCCAL+=Count;
-
-                USHC = 0;
-	        	USHC = 1;
-	        }
+            USBD_CalibrationInit();
         }
         if(UBSPD)
             UBSPD = 0;
