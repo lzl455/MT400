@@ -279,7 +279,7 @@ into_bootloader:
 //
         if(UE0STL)
         {
-            unsigned char t = 100;    //不同运行速度下,可能需要修改t
+            unsigned int t = 1000;    //不同运行速度下,可能需要修改t (超过255需用int)
             while(t--)
             {
                 if(!UE0STL)
