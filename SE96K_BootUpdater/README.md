@@ -30,8 +30,22 @@
    ```
 
    脚本会检查数据只在 0x0000–0x0FFF、尾标记为 `AA 55 5A`，并打印项目 ID / Boot 版本，请核对。
+
+   **建议加上 `--app-bootloader`**，同时把新 Boot 放进 App 工程的 `driver/BootLoader_bin.c`
+   （量产整片烧录用），保证 Updater 和量产用的是同一个 Boot：
+
+   ```bash
+   python SE96K_BootUpdater/tools/hex2c.py SE93T_BootLoader/SE93T_BootLoader/output/SE95K.hex --app-bootloader
+   ```
+
+   - 只替换 `bootloader_0[]` 大括号里的数据，并在数组上方写一行 `// hex2c: ... Boot版本 N` 说明；
+     文件其余内容、`debug` / `bootloader` 开关状态、换行符都保持不变。
+   - `--app-bootloader 路径` 可指定其他 App 工程的 `BootLoader_bin.c`；文件不存在时按原结构新建。
+   - 只想更新 App 工程、不动 `boot_image.c` 时加 `--no-updater`。
 3. 用 ZCW 打开 `Updater.prj` 编译，`output/*.bin` 就是给驱动下发的 Updater 固件
    （格式与正式 App 的 bin 相同，从 0x1000 开始）。
+4. 量产烧录文件：在 App 工程 `driver/BootLoader_bin.c` 中打开 `#define bootloader` 后编译 App，
+   得到包含 Boot 的整片镜像。**该文件只给烧录器用**；给驱动升级的 App 必须关闭此开关另行编译。
 
 > 仓库里当前的 `boot_image.c` 是用**旧 Boot**（版本 1）生成的占位文件。用它编出来的
 > Updater 发现 Boot 区内容一致，什么都不写，直接进入 Boot。正式使用前务必按上面步骤重新生成。
