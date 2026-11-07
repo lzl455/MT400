@@ -31,14 +31,14 @@ void flash_program(unsigned int addr, unsigned char length)
     unsigned char const *pRom;
 
     if((iCODE_LENGTH <= addr)
-		||(128<length))
+		||(iPAGE_LENGHT < ((addr&0x7F)+length)))   // 不允许跨页
 	{
         bhid_cmd_err = 1;
         return;
     }
     addr += iCODE_MAIN_ADDR;
 
-	pRom = (const unsigned char*)(addr&0x7F80);
+	pRom = (const unsigned char*)addr;     // 与 App 一致: 比较目标地址处数据
 	for(i=0; i<length; i++)
 	{
 		if(flash_fifo[i] != *pRom++)
@@ -73,11 +73,10 @@ flash_w_begin:
 	WDT*
 	#endasm
 
-	pRom = (const unsigned char*)addr;
-    j = (addr&0x7F);
+	pRom = (const unsigned char*)addr;     // 写后校验
 	for(i=0; i<length; i++)
     {
-        if(flash_fifo[j++] != *pRom++)
+        if(flash_fifo[i] != *pRom++)
         {
             bhid_cmd_err = 1;
             break;

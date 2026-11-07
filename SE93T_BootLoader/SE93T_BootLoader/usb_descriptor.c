@@ -48,6 +48,45 @@ extern void memcpy(unsigned char  *ptr_d, unsigned char *ptr_s, unsigned char le
 //
 #define USBCaliCnt              10
 
+/******************************************************************************
+* 函数名称: USBD_CalibrationInit()
+* 功能描述: USB 总线复位时的 IRC 粗校准, 并开启 SOF 平均校准
+* 说    明: 与 App 工程 usb_descriptor.c 中 USBD_CalibrationInit 保持一致
+******************************************************************************/
+void USBD_CalibrationInit(void)
+{
+	unsigned char flag = 0;
+	unsigned char Count = 0;
+
+	usbcalisum = 0;
+	usbcalimax = 0;
+	usbcalimin = 0XFF;
+	usbcalisimplecnt = 0;
+	USHC = 1;
+
+	if(USHC)
+	{
+		if(UCLKCON>=0X20)
+		{
+			Count = (UCLKCON - 0X20)/2;
+		}
+		else
+		{
+			Count = (0X20-UCLKCON)/2;
+			flag=1;
+		}
+		CALLOCK = 0x55;
+		CALLOCK = 0xAA;
+		if(flag)
+		    IRCCAL-=Count;
+		else
+			IRCCAL+=Count;
+
+        USHC = 0;
+		USHC = 1;
+	}
+}
+
 //----------------------------------------------------------------------------—;
 //表格定义区
 //

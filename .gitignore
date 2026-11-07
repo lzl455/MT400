@@ -1,2 +1,4 @@
 # 本地工具缓存
 .mimosa/
+__pycache__/
+*.pyc

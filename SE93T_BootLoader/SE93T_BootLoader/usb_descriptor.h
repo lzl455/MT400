@@ -464,9 +464,9 @@
 
 #define     iUSB_DEFAULT_VID                    0xC2,0x32   // 0x32C2
 #define     iUSB_DEFAULT_PID                    0x1B,0x00   // 0x001B
-#define     BCD_USB_VERSION                     0x00,0x02
+#define     BCD_USB_VERSION                     0x10,0x01   // USB 1.1 (0x0110)
 #define     HID_VERSION                         0x10,0x01
-#define	    BCD_DEVICE_NUMBER                   0x00,0x02
+#define	    BCD_DEVICE_NUMBER                   0x10,0x01   // 0x0110
 
 //*****************************************************************************
 #define	WORD(V_H,V_L)                           V_L, V_H
@@ -512,7 +512,7 @@ unsigned char const DeviceDesc[] =
     MAX_EP0_SIZE,                               //最大封包大小,64
     iUSB_DEFAULT_VID,                           //Vendor ID;
     iUSB_DEFAULT_PID,                           //Product ID;
-    BCD_DEVICE_NUMBER,                          //以BCD表示设备发行的序列号,0x0200(00.03)
+    BCD_DEVICE_NUMBER,                          //以BCD表示设备发行的序列号,0x0110
     0x01,                                       //制造商的字符串描述索引
     0x02,                                       //产品的字符串描述索引
     0x00,                                       //设备序号的字符串描述符索引
