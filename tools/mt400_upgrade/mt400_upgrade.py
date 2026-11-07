@@ -6,8 +6,10 @@ SE96K 升级工具 —— 用软件模拟驱动发命令
 真实键盘 (需要 pip install hidapi):
     python mt400_upgrade.py list
     python mt400_upgrade.py info
+    python mt400_upgrade.py inspect Updater.bin App.bin  # 发送前检查文件
     python mt400_upgrade.py write-app  App.bin
     python mt400_upgrade.py upgrade-boot  Updater.bin  App.bin
+    python mt400_upgrade.py --step --log boot.log upgrade-boot Updater.bin App.bin  # 分步+记录
     python mt400_upgrade.py shell                     # 交互式手动发命令
 
 模拟键盘 (不需要硬件, 加 --sim):
@@ -16,7 +18,7 @@ SE96K 升级工具 —— 用软件模拟驱动发命令
     python mt400_upgrade.py --sim upgrade-boot  --sim-make-updater  App.bin
     python mt400_upgrade.py --sim shell
 
-通用选项: -v 打印每条 TX/RX 报文
+通用选项: -v 打印每条 TX/RX 报文; --step 每个阶段前暂停确认; --log FILE 同时写入日志文件
 """
 import argparse
 import os
@@ -103,6 +105,30 @@ def do_info(s, args):
         print('Boot: 项目ID %s  版本 %d' % (hexs(pid), ver))
 
 
+def inspect_file(path, log=print):
+    """打印文件类型、标识, 并做发送前检查; 返回是否通过"""
+    try:
+        fw = FwFile.load(path)
+    except (UpgradeError, IOError) as e:
+        log('%s: 错误 %s' % (path, e))
+        return False
+    log('%s' % path)
+    log('  %s' % fw.describe())
+    errors, notes = fw.check()
+    for n in notes:
+        log('  ' + n)
+    for e in errors:
+        log('  [错误] ' + e)
+    log('  %s' % ('检查通过' if not errors else '检查未通过, 不要发送此文件'))
+    return not errors
+
+
+def do_inspect(s, args):
+    ok = all([inspect_file(p) for p in args.files])
+    if not ok:
+        raise UpgradeError('文件检查未通过')
+
+
 def do_jump_boot(s, args):
     s.enter_boot()
     pid, ver = s.boot_read_info()
@@ -176,10 +202,25 @@ SHELL_HELP = """\
   page ADDR HEX..|ff        整页写入 (自动分包+校验), ff 表示全 0xFF
   read ADDR LEN             Boot 读 Flash (地址为 bin 偏移)
   run                       Boot 运行 App (0E 1E), 并等待设备出现
+  inspect FILE              检查 bin 文件 (类型/标识/内嵌 Boot)
+  write FILE                Boot 写入整个 bin (首页最后写, 每页 5×W_FIFO + W_FLASH)
+  verify FILE               Boot 回读整片与 bin 比对
   raw HEX..                 发送任意报文 (按固件编号, 首字节为命令头), 打印全部应答
   sim power [keys]          [模拟] 断电再上电, keys 表示按住 左Ctrl+左Win
   sim state                 [模拟] 查看状态
   help / quit"""
+
+
+def wait_any(s, timeout):
+    """同时等 App 或 Boot 出现"""
+    import time
+    t0 = time.time()
+    while time.time() - t0 < timeout:
+        for kind in ('boot', 'app'):
+            if s.bus.find(kind):
+                return kind
+        time.sleep(s.poll)
+    return None
 
 
 def shell(s, args, kb):
@@ -242,13 +283,33 @@ def shell(s, args, kb):
                 s.boot_run_app()
                 s.close()
                 s.wait_gone('boot', 1.0)
-                for kind in ('app', 'boot'):
-                    if s.wait_appear(kind, 2.0):
-                        s.open(kind)
-                        print('设备: %s' % kind)
-                        break
+                kind = wait_any(s, 5.0)
+                if kind:
+                    s.open(kind)
+                    print('设备: %s' % kind)
                 else:
-                    print('超时: 没有设备出现')
+                    print('超时: 5 秒内没有设备出现 (Updater 可能停机, 请重新插拔)')
+            elif c == 'inspect':
+                inspect_file(p[0])
+            elif c == 'write':
+                fw = FwFile.load(p[0])
+                print(fw.describe())
+                s.precheck(fw)
+                v, s.verbose = s.verbose, False      # 整片写入不逐条打印
+                try:
+                    s.boot_write_image(fw.bin, '写入')
+                finally:
+                    s.verbose = v
+                print('写入完成, 输入 run 运行')
+            elif c == 'verify':
+                fw = FwFile.load(p[0])
+                v, s.verbose = s.verbose, False
+                try:
+                    data = s.boot_read_flash(0, BIN_SIZE)
+                finally:
+                    s.verbose = v
+                bad = [x for x in range(0, BIN_SIZE, 128) if data[x:x + 128] != fw.bin[x:x + 128]]
+                print('一致' if not bad else '%d 页不一致, 首个 Flash 0x%04X' % (len(bad), 0x1000 + bad[0]))
             elif c == 'raw':
                 if not s.link:
                     s.open_any()
@@ -276,11 +337,40 @@ def shell(s, args, kb):
 
 
 # ============================================================================ main
+class Tee(object):
+    """stdout 同时写日志文件 (带时间)"""
+    def __init__(self, path):
+        import datetime
+        self.f = open(path, 'a', encoding='utf-8')
+        self.out = sys.__stdout__
+        self.f.write('\n===== %s  %s\n' % (datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                                           ' '.join(sys.argv[1:])))
+
+    def write(self, s):
+        self.out.write(s)
+        self.f.write(s)
+        self.f.flush()
+
+    def flush(self):
+        self.out.flush()
+        self.f.flush()
+
+
+def confirm_step(text):
+    try:
+        ans = input('\n>>> 下一步: %s  [回车继续 / q 取消] ' % text)
+    except EOFError:
+        return True
+    return ans.strip().lower() not in ('q', 'n', 'quit')
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description='SE96K 升级工具 (模拟驱动)',
                                  formatter_class=argparse.RawDescriptionHelpFormatter, epilog=__doc__)
     ap.add_argument('-v', '--verbose', action='store_true', help='打印每条 TX/RX 报文')
     ap.add_argument('--index', type=int, default=0, help='多把键盘时选第几把 App (从 0 起)')
+    ap.add_argument('--step', action='store_true', help='升级流程中每个阶段前暂停, 按回车继续')
+    ap.add_argument('--log', metavar='FILE', help='把输出同时写入日志文件')
     g = ap.add_argument_group('模拟器')
     g.add_argument('--sim', action='store_true', help='使用模拟键盘, 不需要硬件')
     g.add_argument('--sim-boot', default=DEF_SIM_BOOT, help='模拟器 Boot 区镜像 (4096 字节 bin)')
@@ -292,6 +382,8 @@ def main(argv=None):
     sub = ap.add_subparsers(dest='cmd')
     sub.add_parser('list', help='列出设备')
     sub.add_parser('info', help='读版本')
+    ins = sub.add_parser('inspect', help='检查 bin 文件 (不连设备)')
+    ins.add_argument('files', nargs='+')
     sub.add_parser('jump-boot', help='App 跳 Boot')
     sub.add_parser('run-app', help='Boot 运行 App')
     r = sub.add_parser('read', help='Boot 读 Flash (地址为 bin 偏移)')
@@ -316,9 +408,24 @@ def main(argv=None):
     if args.sim_app == '':
         args.sim_app = None
 
+    if args.log:
+        tee = Tee(args.log)
+        sys.stdout = tee
+    if args.cmd == 'inspect':
+        try:
+            do_inspect(None, args)
+            return 0
+        except UpgradeError:
+            return 2
+        finally:
+            if args.log:
+                sys.stdout = sys.__stdout__
+
     bus, kb = make_bus(args)
     s = Session(bus, verbose=args.verbose)
     s.progress = progress_printer()
+    if args.step:
+        s.confirm = confirm_step
     try:
         if args.cmd == 'shell':
             shell(s, args, kb)
@@ -333,6 +440,8 @@ def main(argv=None):
         s.close()
         if kb is not None:
             print('[模拟] 结束状态: %s  Boot 版本 %d' % (kb.state, kb.boot_version()))
+        if args.log:
+            sys.stdout = sys.__stdout__
     return 0
 
 

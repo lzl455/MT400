@@ -88,6 +88,48 @@ class FwFile(object):
         kind = 'Updater (目标 Boot 版本 %d)' % self.ver if self.is_updater else 'App (版本 %d)' % self.ver
         return '%s  项目ID %s  标识 %r' % (kind, hexs(self.pid), bytes(self.tag))
 
+    def embedded_boot(self):
+        """Updater 内嵌的 boot_image[4096]; 返回 (偏移, 镜像) 或 (None, None)"""
+        return find_embedded_boot(self.bin)
+
+    def check(self):
+        """
+        发送前检查, 返回 (错误列表, 提示列表)。
+        Updater: 必须能找到内嵌 Boot, 且其项目ID/版本与 0x5FF0 标识一致;
+                 内嵌 Boot 版本 <= 1 说明还是占位文件 (旧 Boot)。
+        """
+        errors, notes = [], []
+        if self.is_updater:
+            off, img = self.embedded_boot()
+            if img is None:
+                errors.append('找不到内嵌的 Boot 镜像 (结尾 AA 55 5A、开头 "Bo")')
+            else:
+                ipid, iver = bytes(img[0xFF8:0xFFC]), img[0xFFC]
+                notes.append('内嵌 Boot 位于 bin 偏移 0x%04X (Flash 0x%04X): 项目ID %s 版本 %d'
+                             % (off, BIN_BASE + off, hexs(ipid), iver))
+                if ipid != self.pid or iver != self.ver:
+                    errors.append('内嵌 Boot (项目ID %s 版本 %d) 与标识 (项目ID %s 版本 %d) 不一致'
+                                  % (hexs(ipid), iver, hexs(self.pid), self.ver))
+                if iver <= 1:
+                    errors.append('内嵌 Boot 版本为 %d, 这是用旧 Boot 生成的占位 Updater, '
+                                  '请用新 Boot 重新运行 hex2c.py 后再编译 Updater' % iver)
+                if img[0:4] == b'\xFF\xFF\xFF\xFF':
+                    errors.append('内嵌 Boot 的复位向量为空')
+        else:
+            if self.bin[0:2] == b'\xFF\xFF':
+                errors.append('0x1000 处为空白, 不是有效的 App')
+            if find_embedded_boot(self.bin)[1] is not None and self.tag[0:4] != b'BYKC':
+                notes.append('文件里含有 Boot 镜像, 请确认不是 Updater')
+        return errors, notes
+
+
+def find_embedded_boot(data):
+    data = bytes(data)
+    for off in range(0, len(data) - 0x1000 + 1):
+        if data[off + 0xFFD:off + 0x1000] == b'\xAA\x55\x5A' and data[off + 0xFF0:off + 0xFF2] == b'Bo':
+            return off, data[off:off + 0x1000]
+    return None, None
+
 
 # ---------------------------------------------------------------------------
 # 会话: 命令封装 + 升级流程
@@ -116,6 +158,7 @@ class Session(object):
         self.poll = poll
         self.link = None
         self.progress = None            # 回调 progress(stage, done, total)
+        self.confirm = None             # 回调 confirm(提示) -> bool, 分步模式用; None 表示不停
 
     # ---------------- 连接 ----------------
     def close(self):
@@ -304,6 +347,18 @@ class Session(object):
             raise UpgradeError('Boot 回 NAK: 0x1000 处为空白, 没有 App')
 
     # ---------------- 流程 ----------------
+    def step(self, text):
+        """分步模式: 每个阶段前停下来等确认"""
+        if self.confirm and not self.confirm(text):
+            raise UpgradeError('用户取消: %s' % text)
+
+    def precheck(self, fw):
+        errors, notes = fw.check()
+        for n in notes:
+            self.log('  ' + n)
+        if errors:
+            raise UpgradeError('%s 检查未通过:\n  - %s' % (fw.name, '\n  - '.join(errors)))
+
     def enter_boot(self):
         if self.bus.find('boot'):
             self.open('boot')
@@ -343,8 +398,11 @@ class Session(object):
     def upgrade_app(self, fw):
         if fw.is_updater:
             raise UpgradeError('这是 Boot 升级文件 (UPD), 请选择 App 固件')
+        self.precheck(fw)
+        self.step('跳进 Boot')
         self.enter_boot()
         self.check_boot_product()
+        self.step('写入 App (%s)' % fw.name)
         self.log('写入 App: %s' % fw.describe())
         self.boot_write_image(fw.bin, '写 App')
         return self.finish_to_app(fw.ver)
@@ -354,14 +412,21 @@ class Session(object):
             raise UpgradeError('%s 不是 Updater (偏移 0x5FF8 不是 UPD)' % upd.name)
         if app.is_updater:
             raise UpgradeError('%s 是 Updater, 请选择正式 App' % app.name)
+        self.log('检查 %s' % upd.name)
+        self.precheck(upd)
+        self.log('检查 %s' % app.name)
+        self.precheck(app)
+        self.step('跳进 Boot')
         self.enter_boot()
         _, ver = self.check_boot_product()
         boot_ok = True
         if ver == upd.ver:
             self.log('Boot 已是版本 %d, 跳过 Updater' % ver)
         else:
+            self.step('写入 Updater (%s)' % upd.name)
             self.log('写入 Updater: %s' % upd.describe())
             self.boot_write_image(upd.bin, '写 Updater')
+            self.step('运行 Updater 改写 Boot 区 (约 0.2 秒, 期间不要拔线)')
             self.log('运行 Updater')
             self.boot_run_app()
             self.close()
@@ -376,8 +441,10 @@ class Session(object):
             else:
                 boot_ok = False
                 self.log('警告: Boot 版本仍为 %d (Updater 未改动 Boot), 继续恢复 App' % ver)
+        self.step('写回 App (%s)' % app.name)
         self.log('写回 App: %s' % app.describe())
         self.boot_write_image(app.bin, '写 App')
+        self.step('运行 App')
         self.finish_to_app(app.ver)
         if not boot_ok:
             raise UpgradeError('Boot 未更新, App 已恢复')

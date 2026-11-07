@@ -16,6 +16,8 @@
 """
 from collections import deque
 
+from protocol import find_embedded_boot
+
 FLASH_SIZE = 0x8000
 PAGE = 128
 APP_BASE = 0x1000
@@ -282,14 +284,6 @@ class SimKeyboard(object):
             self.after_reply = self._soft_reset
 
     # ================================================================ Updater
-    def _find_boot_image(self):
-        """在 Updater 程序区里找内嵌的 boot_image[4096] (尾标记 AA 55 5A, 开头 'Bo')"""
-        area = bytes(self.flash[APP_BASE:0x7F80])
-        for off in range(0, len(area) - 0x1000 + 1):
-            if area[off + 0xFFD:off + 0x1000] == b'\xAA\x55\x5A' and area[off + 0xFF0:off + 0xFF2] == b'Bo':
-                return area[off:off + 0x1000]
-        return None
-
     def _upd_write(self, addr, data):
         """Updater flash_page_write: 一致则跳过, 否则擦写并校验, 重试 3 次"""
         if bytes(self.flash[addr:addr + PAGE]) == data:
@@ -306,7 +300,7 @@ class SimKeyboard(object):
 
     def _run_updater(self):
         self.events.append('updater')
-        img = self._find_boot_image()
+        img = find_embedded_boot(self.flash[APP_BASE:0x7F80])[1]
         resume = bytes(self.flash[0:PAGE]) == stub_page()
         try:
             if img is None:

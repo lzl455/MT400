@@ -231,6 +231,37 @@ class TestBootUpgrade(Base):
             s.upgrade_boot(FwFile(APP_BIN), FwFile(UPD_BIN))
 
 
+class TestPrecheck(Base):
+    def test_placeholder_updater_rejected(self):
+        """用旧 Boot 生成的占位 Updater: 发送前就拒绝, 设备不动"""
+        kb, s, _ = self.make()
+        with self.assertRaises(UpgradeError) as cm:
+            s.upgrade_boot(FwFile(make_sim_updater(OLD_BOOT)), FwFile(APP_BIN))
+        self.assertIn('占位', str(cm.exception))
+        self.assertEqual(kb.state, 'app')
+
+    def test_updater_without_image_rejected(self):
+        b = bytearray(UPD_BIN)
+        b[0x100:0x1100] = b'\xFF' * 0x1000
+        errors, _ = FwFile(bytes(b)).check()
+        self.assertTrue(any('找不到' in e for e in errors))
+
+    def test_updater_tag_mismatch_rejected(self):
+        b = bytearray(UPD_BIN)
+        b[0x5FF4] = 7
+        errors, _ = FwFile(bytes(b)).check()
+        self.assertTrue(any('不一致' in e for e in errors))
+
+    def test_step_cancel(self):
+        kb, s, _ = self.make()
+        answers = iter([True, False])               # 跳 Boot 后, 写 Updater 前取消
+        s.confirm = lambda text: next(answers)
+        with self.assertRaises(UpgradeError):
+            s.upgrade_boot(FwFile(UPD_BIN), FwFile(APP_BIN))
+        self.assertEqual(kb.state, 'boot')
+        self.assertEqual(bytes(kb.flash[0:0x1000]), OLD_BOOT)
+
+
 class TestCli(unittest.TestCase):
     def test_cli_sim(self):
         a = mt400_upgrade.DEF_SIM_APP
@@ -239,6 +270,7 @@ class TestCli(unittest.TestCase):
         self.assertEqual(mt400_upgrade.main(['--sim', 'upgrade-boot', '--sim-make-updater', a]), 0)
         self.assertEqual(mt400_upgrade.main(['--sim', 'verify', a]), 0)
         self.assertEqual(mt400_upgrade.main(['--sim', 'write-app', mt400_upgrade.DEF_SIM_BOOT]), 2)
+        self.assertEqual(mt400_upgrade.main(['inspect', a]), 0)
 
 
 if __name__ == '__main__':
