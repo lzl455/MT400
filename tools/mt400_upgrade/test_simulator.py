@@ -50,7 +50,8 @@ class Base(unittest.TestCase):
         kb = SimKeyboard(boot, app, **kw)
         kb.power_on(keys=keys)
         log = []
-        s = Session(SimBus(kb), log=log.append, appear_timeout=0.2, gone_timeout=0.2, poll=0.01)
+        s = Session(SimBus(kb), log=log.append, appear_timeout=0.2, gone_timeout=0.2, poll=0.01,
+                    updater_timeout=0.2)
         return kb, s, log
 
     def assertApp(self, kb, app):

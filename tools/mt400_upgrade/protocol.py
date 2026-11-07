@@ -40,6 +40,18 @@ class UpgradeError(Exception):
     pass
 
 
+UPDATER_TIMEOUT_HELP = """运行 Updater 后 Boot 没有出现。请按顺序排查 (不要拔线, 先做第 1 步):
+  1. 运行 list, 看是否已出现 (Windows 首次识别新设备可能较慢)
+       出现 Boot -> 运行 info: 版本 2 = Boot 已更新, 再执行一次本命令即可写回 App
+  2. 拔掉键盘, 等 3 秒, 正常插上, 等 10 秒后运行 list
+       出现 Boot 版本 2 -> 同上
+  3. 拔掉, 按住 左Ctrl+左Win 插上, 运行 list
+       出现 Boot 版本 1 -> Boot 区写保护, Updater 未改动 Boot; 运行 write-app App.bin 恢复,
+                          并检查烧录选项 "0000-0FFF 写保护"
+  4. 以上都没有 -> 打开设备管理器看是否有 "未知 USB 设备"; 保存 --log 日志、
+     Boot 与 Updater 的 output 目录, 需要用烧录器恢复"""
+
+
 def hexs(b):
     return ' '.join('%02X' % x for x in b)
 
@@ -148,7 +160,8 @@ class Session(object):
     """
 
     def __init__(self, bus, log=print, verbose=False,
-                 reply_timeout=0.5, appear_timeout=5.0, gone_timeout=3.0, poll=0.05):
+                 reply_timeout=0.5, appear_timeout=5.0, gone_timeout=3.0, poll=0.05,
+                 updater_timeout=20.0):
         self.bus = bus
         self.log = log
         self.verbose = verbose
@@ -156,6 +169,7 @@ class Session(object):
         self.appear_timeout = appear_timeout
         self.gone_timeout = gone_timeout
         self.poll = poll
+        self.updater_timeout = updater_timeout
         self.link = None
         self.progress = None            # 回调 progress(stage, done, total)
         self.confirm = None             # 回调 confirm(提示) -> bool, 分步模式用; None 表示不停
@@ -431,9 +445,9 @@ class Session(object):
             self.boot_run_app()
             self.close()
             self.wait_gone('boot')
-            if not self.wait_appear('boot'):
-                raise UpgradeError('Updater 后 Boot 未出现: 请重新插拔键盘, '
-                                   '上电后 Updater 会继续, 然后再次执行本命令')
+            self.log('等待新 Boot 枚举 (最长 %d 秒)...' % self.updater_timeout)
+            if not self.wait_appear('boot', self.updater_timeout):
+                raise UpgradeError(UPDATER_TIMEOUT_HELP)
             self.open('boot')
             _, ver = self.boot_read_info()
             if ver == upd.ver:

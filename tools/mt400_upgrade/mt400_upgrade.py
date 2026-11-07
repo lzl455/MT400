@@ -370,6 +370,8 @@ def main(argv=None):
     ap.add_argument('-v', '--verbose', action='store_true', help='打印每条 TX/RX 报文')
     ap.add_argument('--index', type=int, default=0, help='多把键盘时选第几把 App (从 0 起)')
     ap.add_argument('--step', action='store_true', help='升级流程中每个阶段前暂停, 按回车继续')
+    ap.add_argument('--wait', type=float, default=20.0, metavar='秒',
+                    help='运行 Updater 后等待新 Boot 枚举的最长时间 (默认 20)')
     ap.add_argument('--log', metavar='FILE', help='把输出同时写入日志文件')
     g = ap.add_argument_group('模拟器')
     g.add_argument('--sim', action='store_true', help='使用模拟键盘, 不需要硬件')
@@ -422,7 +424,7 @@ def main(argv=None):
                 sys.stdout = sys.__stdout__
 
     bus, kb = make_bus(args)
-    s = Session(bus, verbose=args.verbose)
+    s = Session(bus, verbose=args.verbose, updater_timeout=args.wait)
     s.progress = progress_printer()
     if args.step:
         s.confirm = confirm_step
