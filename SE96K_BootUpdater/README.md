@@ -18,7 +18,7 @@
 | `MAIN.C` | 更新流程 |
 | `flash.c` | 整页擦写 + 回读校验（IAP 流程同 App/Boot 的 `flash.c`） |
 | `boot_image.c` / `boot_image.h` | 新 Boot 镜像及其项目ID、版本号，**由 `tools/hex2c.py` 生成** |
-| `tools/hex2c.py` | 把 Boot 工程的 `output/SE95K.hex` 转成 `boot_image.c` / `.h` |
+| `tools/hex2c.py` | Boot hex → `boot_image.c` / `.h`（`--app-bootloader` 同时更新 App 的 `BootLoader_bin.c`）；`--bin` 把 Updater / App 的 hex 转成给驱动用的 bin |
 
 ## 生成步骤
 
@@ -42,8 +42,16 @@
      文件其余内容、`debug` / `bootloader` 开关状态、换行符都保持不变。
    - `--app-bootloader 路径` 可指定其他 App 工程的 `BootLoader_bin.c`；文件不存在时按原结构新建。
    - 只想更新 App 工程、不动 `boot_image.c` 时加 `--no-updater`。
-3. 用 ZCW 打开 `Updater.prj` 编译，`output/*.bin` 就是给驱动下发的 Updater 固件
-   （格式与正式 App 的 bin 相同，从 0x1000 开始）。
+3. 用 ZCW 打开 `Updater.prj` 编译，得到 `output/` 下的 hex。转成给驱动用的 bin：
+
+   ```bash
+   python SE96K_BootUpdater/tools/hex2c.py --bin SE96K_BootUpdater/output/Updater.hex
+   ```
+
+   - 输出到 hex 同目录同名 `.bin`（`-o` 可指定），固定 28544 字节，对应 0x1000–0x7F7F，空白填 0xFF。
+   - 转换后自动检查：UPD 标识、内嵌 Boot 的项目ID/版本、是否为占位 Updater；未通过则不生成
+     （`--force` 强制生成）。hex 中有 0x1000 以下数据（开了 `bootloader`/`debug` 或偏移不对）直接报错。
+   - 同样适用于 App 的 hex：`--bin <App output>/SE95K.hex`，结果与 ZCW 生成的 `SE95K.bin` 逐字节一致。
 4. 量产烧录文件：在 App 工程 `driver/BootLoader_bin.c` 中打开 `#define bootloader` 后编译 App，
    得到包含 Boot 的整片镜像。**该文件只给烧录器用**；给驱动升级的 App 必须关闭此开关另行编译。
 

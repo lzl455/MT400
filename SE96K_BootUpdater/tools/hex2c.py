@@ -14,6 +14,10 @@
     python hex2c.py <Boot hex> --app-bootloader --no-updater
         只更新 BootLoader_bin.c, 不动 boot_image.c / .h
 
+    python hex2c.py --bin <Updater 或 App 的 hex> [-o 输出.bin]
+        把 ZCW 编出的 hex 转成给驱动用的 bin (0x1000-0x7F7F, 28544 字节, 空白填 0xFF),
+        默认输出到 hex 同目录同名 .bin; 转换后按驱动的规则检查 (同 mt400_upgrade inspect)
+
 检查项:
     * 数据只能落在 0x0000-0x0FFF (Boot 区), 否则报错
     * 0x0FFD-0x0FFF 必须是 Boot 版本信息尾标记 AA 55 5A
@@ -33,6 +37,10 @@ import sys
 BOOT_SIZE = 0x1000
 PAGE = 128
 
+APP_BASE = 0x1000           # 给驱动的 bin: 0x1000 - 0x7F7F
+APP_END = 0x7F80
+INFO = 0x6FF0               # App fw_info / Updater updater_info
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 DEF_BOOT_IMAGE = os.path.join(HERE, '..', 'boot_image.c')
 DEF_APP_BOOTLOADER = os.path.join(HERE, '..', '..', 'SE96K_0026_GZS_400US_LINE_MONO',
@@ -42,9 +50,16 @@ ARRAY_DECL = 'static const unsigned char bootloader_0[0x1000] @0x0000 ='
 INFO_TAG = '// hex2c:'
 
 
-def parse_hex(path):
-    img = bytearray([0xFF] * BOOT_SIZE)
-    used = bytearray(BOOT_SIZE)
+def parse_hex(path, start=0, end=BOOT_SIZE, skip_from=None):
+    """
+    读 Intel HEX 到 [start, end) 的镜像 (空白 0xFF)。
+    地址 >= skip_from 的记录 (如配置位) 跳过并计数; 其余越界记录报错。
+    返回 (img, used, skipped)
+    """
+    size = end - start
+    img = bytearray([0xFF] * size)
+    used = bytearray(size)
+    skipped = 0
     base = 0
     with open(path, 'r') as f:
         for n, line in enumerate(f, 1):
@@ -60,11 +75,14 @@ def parse_hex(path):
             data = raw[4:4 + cnt]
             if rtype == 0x00:
                 a = base + addr
-                if a + cnt > BOOT_SIZE:
-                    raise ValueError('第 %d 行地址 0x%04X 超出 Boot 区 0x0000-0x0FFF' % (n, a))
-                img[a:a + cnt] = data
+                if skip_from is not None and a >= skip_from:
+                    skipped += 1
+                    continue
+                if a < start or a + cnt > end:
+                    raise ValueError('第 %d 行地址 0x%04X 超出范围 0x%04X-0x%04X' % (n, a, start, end - 1))
+                img[a - start:a - start + cnt] = data
                 for i in range(cnt):
-                    used[a + i] = 1
+                    used[a - start + i] = 1
             elif rtype == 0x01:
                 break
             elif rtype == 0x02:
@@ -75,7 +93,7 @@ def parse_hex(path):
                 pass
             else:
                 raise ValueError('第 %d 行未知记录类型 0x%02X' % (n, rtype))
-    return img, used
+    return img, used, skipped
 
 
 # ============================================================================
@@ -232,21 +250,105 @@ def write_app_bootloader(path, src, img, pid, ver):
 
 
 # ============================================================================
+# 给驱动的 bin: hex (0x1000-0x7F7F) -> bin
+#
+def find_embedded_boot(data):
+    data = bytes(data)
+    for off in range(0, len(data) - BOOT_SIZE + 1):
+        if data[off + 0xFFD:off + 0x1000] == b'\xAA\x55\x5A' and data[off + 0xFF0:off + 0xFF2] == b'Bo':
+            return off, data[off:off + BOOT_SIZE]
+    return None, None
+
+
+def check_driver_bin(b):
+    """与 tools/mt400_upgrade 的 FwFile.check 相同的规则; 返回 (错误, 提示)"""
+    errors, notes = [], []
+    m = b[INFO - APP_BASE:INFO - APP_BASE + 16]
+    pid = bytes([m[3], m[2], m[1], m[0]])               # ID0..ID3
+    ver, tag = m[4], bytes(m[8:16])
+    is_upd = tag[0:3] == b'UPD'
+    notes.append('类型: %s  项目ID %s  版本 %d  标识 %r'
+                 % ('Updater' if is_upd else 'App', ' '.join('%02X' % x for x in pid), ver, tag))
+    if b[0:2] == b'\xFF\xFF':
+        errors.append('0x1000 处为空白, 不是有效程序')
+    if pid[0:2] != b'\x00\x96':
+        errors.append('0x6FF0 处项目ID %s 不是本产品 (00 96 ..), 标识信息缺失或地址不对'
+                      % ' '.join('%02X' % x for x in pid))
+    if is_upd:
+        off, img = find_embedded_boot(b)
+        if img is None:
+            errors.append('找不到内嵌的 Boot 镜像')
+        else:
+            ipid, iver = bytes(img[0xFF8:0xFFC]), img[0xFFC]
+            notes.append('内嵌 Boot: Flash 0x%04X  项目ID %s  版本 %d'
+                         % (APP_BASE + off, ' '.join('%02X' % x for x in ipid), iver))
+            if ipid != pid or iver != ver:
+                errors.append('内嵌 Boot 与 UPD 标识不一致')
+            if iver <= 1:
+                errors.append('内嵌 Boot 版本 %d: 这是用旧 Boot 生成的占位 Updater, '
+                              '请先用新 Boot 运行 hex2c.py 再编译 Updater' % iver)
+    return errors, notes
+
+
+def export_driver_bin(src, out, force):
+    try:
+        img, used, skipped = parse_hex(src, APP_BASE, APP_END, skip_from=0x8000)
+    except ValueError as e:
+        msg = str(e)
+        if '超出范围' in msg:
+            msg += ('\n       hex 中有 0x1000 以下的数据: 编译时可能打开了 #define bootloader / debug,'
+                    '\n       或工程的 ROM 起始/代码偏移不是 1000。给驱动的文件必须从 0x1000 开始。')
+        sys.exit('错误: %s' % msg)
+    except OSError as e:
+        sys.exit('错误: %s' % e)
+
+    errors, notes = check_driver_bin(img)
+    print('输入: %s' % os.path.abspath(src))
+    for n in notes:
+        print('  ' + n)
+    if skipped:
+        print('  已跳过 0x8000 以上的 %d 条记录 (配置位等, 驱动不写)' % skipped)
+    last = max((i for i in range(len(used)) if used[i]), default=-1)
+    print('  数据范围: 0x1000 - 0x%04X' % (APP_BASE + last))
+    for e in errors:
+        print('  [错误] ' + e)
+    if errors and not force:
+        sys.exit('检查未通过, 未生成 bin (确需生成请加 --force)')
+
+    with open(out, 'wb') as f:
+        f.write(bytes(img))
+    print('输出: %s  (%d 字节)%s' % (os.path.abspath(out), len(img), '  [检查未通过, 不要发给键盘]' if errors else ''))
+
+
+# ============================================================================
 def main():
     ap = argparse.ArgumentParser(description='Boot hex -> C 源文件',
                                  formatter_class=argparse.RawDescriptionHelpFormatter, epilog=__doc__)
-    ap.add_argument('hex', help='Boot 工程编译出的 output/SE95K.hex')
+    ap.add_argument('hex', nargs='?', help='Boot 工程编译出的 output/SE95K.hex')
     ap.add_argument('out', nargs='?', default=DEF_BOOT_IMAGE, help='Updater 的 boot_image.c 路径')
     ap.add_argument('--app-bootloader', nargs='?', const=DEF_APP_BOOTLOADER, metavar='BootLoader_bin.c',
                     help='同时更新 App 工程的 BootLoader_bin.c (省略路径则用仓库内 SE96K App 工程)')
     ap.add_argument('--no-updater', action='store_true', help='不生成 boot_image.c / .h')
+    ap.add_argument('--bin', metavar='HEX', help='把 Updater / App 的 hex 转成给驱动用的 bin')
+    ap.add_argument('-o', '--output', metavar='BIN', help='--bin 的输出路径 (默认 hex 同目录同名 .bin)')
+    ap.add_argument('--force', action='store_true', help='--bin 检查未通过时仍然输出')
     args = ap.parse_args()
+
+    if args.bin:
+        if args.hex or args.app_bootloader or args.no_updater:
+            sys.exit('错误: --bin 不能与 Boot hex 转换一起使用, 请分两次运行')
+        out = args.output or os.path.splitext(args.bin)[0] + '.bin'
+        export_driver_bin(args.bin, out, args.force)
+        return
+    if not args.hex:
+        ap.print_help()
+        sys.exit(1)
     if args.no_updater and not args.app_bootloader:
         sys.exit('错误: --no-updater 需要与 --app-bootloader 一起使用')
 
     src = args.hex
     try:
-        img, used = parse_hex(src)
+        img, used, _ = parse_hex(src)
     except (ValueError, OSError) as e:
         sys.exit('错误: %s' % e)
 

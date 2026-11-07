@@ -14,7 +14,8 @@
 
 1. 电脑装 Python 3，然后 `pip install hidapi`。
 2. 两个文件：
-   - **Updater.bin**：新 Boot 编译后 → `hex2c.py` → 编译 `SE96K_BootUpdater/Updater.prj` 得到；
+   - **Updater.bin**：新 Boot 编译后 → `hex2c.py` → 编译 `SE96K_BootUpdater/Updater.prj` →
+     `hex2c.py --bin Updater.hex` 得到；
    - **App.bin**：App 工程 `output/SE95K.bin`（`bootloader` 开关关闭时编译）。
 3. 发送前先检查文件（不需要连键盘）：
 
